@@ -1,20 +1,15 @@
-<style>
-.header_table {border: none;}
-</style>
-
-
 <center>
 <h1>Behind the Scenes: Density Fields for Single View Reconstruction</h1>
-<table>
-<tr>
+<table style="border: none;">
+<tr style="border: none;">
 <td style="border: none;"><a href="https://vision.in.tum.de/members/wimbauer">Felix Wimbauer</a><sup>1</sup></td>
 <td style="border: none;"><a href="https://nan-yang.me/">Nan Yang</a><sup>1,3</sup></td>
 <td style="border: none;"><a href="https://chrirupp.github.io/">Christian Rupprecht</a><sup>2</sup></td>
 <td style="border: none;"><a href="https://vision.in.tum.de/members/cremers">Daniel Cremers</a><sup>1</sup></td>
 </tr>
 </table>
-<table>
-<tr>
+<table style="border: none;">
+<tr style="border: none;">
 <td style="border: none;"><sup>1</sup>Technical University of Munich</td>
 <td style="border: none;"><sup>2</sup>University of Oxford</td>
 <td style="border: none;"><sup>3</sup>Meta</td>
