@@ -16,12 +16,23 @@
 </tr>
 </table>
 <br>
-</table>
 <table style="border: none;">
 <tr style="border: none;">
-<td style="border: none;"><a href="#"><i class="bi bi-file-earmark-richtext"></i> Paper</a></td>
-<td style="border: none;"><a href="#"><i class="bi bi-github"></i>Code</a></td>
-<td style="border: none;"><a href="#"><i class="bi bi-youtube"></i></i>Video</a></td>
+<td style="border: none;">
+<div class="link_button">
+<a href="#" style="color: #ffffff"><i class="bi bi-file-earmark-richtext"></i> Paper</a>
+</div>
+</td>
+<td style="border: none;">
+<div class="link_button">
+<a href="#" style="color: #ffffff"><i class="bi bi-github"></i> Code</a>
+</div>
+</td>
+<td style="border: none;">
+<div class="link_button">
+<a href="#" style="color: #ffffff"><i class="bi bi-youtube"></i> Video</a>
+</div>
+</td>
 </tr>
 </table>
  <video width="100%" autoplay muted loop>
