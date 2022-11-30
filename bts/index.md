@@ -18,19 +18,25 @@
 <table style="border: none;">
 <tr style="border: none;">
 <td style="border: none;">
+<a href="#" style="color: #ffffff">
 <div class="link_button">
-<a href="#" style="color: #ffffff"><i class="bi bi-file-earmark-richtext"></i> Paper</a>
+<i class="bi bi-file-earmark-richtext"></i> Paper
 </div>
+</a>
 </td>
 <td style="border: none;">
+<a href="#" style="color: #ffffff">
 <div class="link_button">
-<a href="#" style="color: #ffffff"><i class="bi bi-github"></i> Code</a>
+<i class="bi bi-github"></i> Code
 </div>
+</a>
 </td>
 <td style="border: none;">
+<a href="#" style="color: #ffffff">
 <div class="link_button">
-<a href="#" style="color: #ffffff"><i class="bi bi-youtube"></i> Video</a>
+<i class="bi bi-youtube"></i> Video
 </div>
+</a>
 </td>
 </tr>
 </table>
@@ -57,11 +63,11 @@ Additionally, we demonstrate the potential of our approach on three datasets for
 
 ![Overview Figure](./assets/architecture.png)
 
-a) Our method first predicts a pixel-aligned feature map F, which describes a density field, from the input image **I**<sub>**I**</sub>.
+**a)** Our method first predicts a pixel-aligned feature map **F**, which describes a density field, from the input image **I**<sub>**I**</sub>.
 For every pixel **u**', the feature f<sub>**u**'</sub> implicitly describes the density distribution along the ray from the camera origin through **u**'. 
 Crucially, this distribution can model density even in occluded regions (e.g. the house). 
 
-b) To render novel views, we perform volume rendering. 
+**b)** To render novel views, we perform volume rendering. 
 For any point **x**, we project **x** into **F** and sample f<sub>**u**'</sub>. 
 This feature is combined with positional encoding and fed into an MLP to obtain density σ.
 We obtain the color c by projecting **x** into one of the views, in this case **I**<sub>**1**</sub>, and directly sampling the image.
