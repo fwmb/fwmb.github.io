@@ -15,7 +15,6 @@
 <td style="border: none;"><sup>3</sup>Meta</td>
 </tr>
 </table>
-<br>
 <table style="border: none;">
 <tr style="border: none;">
 <td style="border: none;">
@@ -53,3 +52,16 @@ By not storing color in the implicit volume, but directly sampling color from th
 Thus, we can apply volume rendering to perform both depth prediction and novel view synthesis. 
 In our experiments, we show that our method is able to predict meaningful geometry for regions that are occluded in the input image. 
 Additionally, we demonstrate the potential of our approach on three datasets for depth prediction and novel-view synthesis.
+
+# Overview
+
+![Overview Figure](./assets/architecture.png)
+
+a) Our method first predicts a pixel-aligned feature map F, which describes a density field, from the input image **I**<sub>**I**</sub>.
+For every pixel **u**', the feature f<sub>**u**'</sub> implicitly describes the density distribution along the ray from the camera origin through **u**'. 
+Crucially, this distribution can model density even in occluded regions (e.g. the house). 
+
+b) To render novel views, we perform volume rendering. 
+For any point **x**, we project **x** into **F** and sample f<sub>**u**'</sub>. 
+This feature is combined with positional encoding and fed into an MLP to obtain density σ.
+We obtain the color c by projecting **x** into one of the views, in this case **I**<sub>**1**</sub>, and directly sampling the image.
