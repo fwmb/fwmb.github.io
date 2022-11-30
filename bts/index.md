@@ -15,6 +15,15 @@
 <td style="border: none;"><sup>3</sup>Meta</td>
 </tr>
 </table>
+<br>
+</table>
+<table style="border: none;">
+<tr style="border: none;">
+<td style="border: none;"><a href="#"><i class="bi bi-file-earmark-richtext"></i> Paper</a></td>
+<td style="border: none;"><a href="#"><i class="bi bi-github"></i>Code</a></td>
+<td style="border: none;"><a href="#"><i class="bi bi-youtube"></i></i>Video</a></td>
+</tr>
+</table>
  <video width="100%" autoplay muted loop>
   <source src="assets/header_vid.mp4" type="video/mp4">
 Your browser does not support the video tag.
