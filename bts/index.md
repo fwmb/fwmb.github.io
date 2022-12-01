@@ -80,7 +80,7 @@ For every sample, we first predict **F** from **I**<sub>**I**</sub> and randomly
 We reconstruct the frames in N<sub>loss</sub> by sampling color from N<sub>render</sub> using the camera poses and the predicted densities.
 The photometric consistency between the reconstructed frames and the frames in N<sub>loss</sub> serves as the supervision signal of the density field.
 
-<img src="./assets/loss.png" style="float: left; margin: 20px 20px 20px 0px;" width=40%>
+<img src="./assets/loss.png" alt="Loss Overview" style="float: left; margin: 20px 20px 20px 0px;" width=40%>
 
 The key difference to self-supervised depth prediction methods, is that by design depth prediction methods can only densely reconstruct the input image.
 In contrast, our density field formulation allows us to reconstruct any frame from any other frame.
@@ -91,4 +91,16 @@ Note, that in order to learn geometry about occluded areas, we require at least 
 
 # Results
 
+## Occupancy Estimation
+
 ![Top-Down Results](./assets/profile_2.png)
+**Top-down visualization of the occupancy map predicted by different methods.** 
+We show an area of x = [−15m, 15m], z = [5m, 30m] and aggregate density from the y-coordinate of the camera 1m downward. 
+Depth prediction methods such as MonoDepth2 do not predict a full 3D volume. 
+Thus, objects cast "occupancy shadows" behind them. 
+Our method predicts the full occupancy volume and can thus reason about the space behind objects. 
+Training with more views improves occupancy estimation.
+Inference is from a single image. 
+Legend: n T(): n timesteps of, L: left camera, R: right camera, F: left and right fisheye camera.
+
+## 
