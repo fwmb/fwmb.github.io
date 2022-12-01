@@ -80,10 +80,15 @@ For every sample, we first predict **F** from **I**<sub>**I**</sub> and randomly
 We reconstruct the frames in N<sub>loss</sub> by sampling color from N<sub>render</sub> using the camera poses and the predicted densities.
 The photometric consistency between the reconstructed frames and the frames in N<sub>loss</sub> serves as the supervision signal of the density field.
 
-<img src="/bts/assets/loss.png" style="float: left; margin: 20px 20px 20px 0px;" width=40%>
+<img src="./assets/loss.png" style="float: left; margin: 20px 20px 20px 0px;" width=40%>
+
 The key difference to self-supervised depth prediction methods, is that by design depth prediction methods can only densely reconstruct the input image.
 In contrast, our density field formulation allows us to reconstruct any frame from any other frame.
 Consider an area of the scene, which is occluded in the input **I**<sub>**I**</sub>, but visible in two other frames **I**<sub>k</sub> , **I**<sub>1k+1</sub>, as depicted in the figure. 
 During training, we aim to reconstruct this area in **I**<sub>k</sub>. 
 The reconstruction based on colors sampled from **I**<sub>k+1</sub> will give a clear training signal to correctly predict the geometric structure of this area, even though it is occluded in **I**<sub>**I**</sub>. 
 Note, that in order to learn geometry about occluded areas, we require at least two additional views besides the input during training, i.e. to look _behind the scenes_.
+
+# Results
+
+![Top-Down Results](./assets/profile_2.png)
