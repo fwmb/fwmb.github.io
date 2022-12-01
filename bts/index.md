@@ -80,7 +80,7 @@ For every sample, we first predict **F** from **I**<sub>**I**</sub> and randomly
 We reconstruct the frames in N<sub>loss</sub> by sampling color from N<sub>render</sub> using the camera poses and the predicted densities.
 The photometric consistency between the reconstructed frames and the frames in N<sub>loss</sub> serves as the supervision signal of the density field.
 
-<img src="./assets/loss.png" alt="Loss Overview" style="float: left; margin: 20px 20px 20px 0px;" width="40%"/>
+<img src="./assets/loss.png" alt="Loss Overview" style="float: left; margin: 10px 20px 10px 0px;" width="40%"/>
 
 The key difference to self-supervised depth prediction methods, is that by design depth prediction methods can only densely reconstruct the input image.
 In contrast, our density field formulation allows us to reconstruct any frame from any other frame.
