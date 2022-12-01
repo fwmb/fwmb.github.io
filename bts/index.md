@@ -20,21 +20,21 @@
 <td style="border: none;">
 <a href="#" style="color: #ffffff">
 <div class="link_button">
-<i class="bi bi-file-earmark-richtext"></i> Paper
+<i class="bi bi-file-earmark-richtext"></i> Paper (Soon)
 </div>
 </a>
 </td>
 <td style="border: none;">
 <a href="#" style="color: #ffffff">
 <div class="link_button">
-<i class="bi bi-github"></i> Code
+<i class="bi bi-github"></i> Code (Soon)
 </div>
 </a>
 </td>
 <td style="border: none;">
 <a href="#" style="color: #ffffff">
 <div class="link_button">
-<i class="bi bi-youtube"></i> Video
+<i class="bi bi-youtube"></i> Video (Soon)
 </div>
 </a>
 </td>
@@ -71,3 +71,19 @@ Crucially, this distribution can model density even in occluded regions (e.g. th
 For any point **x**, we project **x** into **F** and sample f<sub>**u**'</sub>. 
 This feature is combined with positional encoding and fed into an MLP to obtain density σ.
 We obtain the color c by projecting **x** into one of the views, in this case **I**<sub>**1**</sub>, and directly sampling the image.
+
+# Learning True 3D
+
+Similarly to radiance fields and self-supervised depth prediction methods, we rely on an image reconstruction loss.
+During training, we have the input frame **I**<sub>**I**</sub> and several additional views N = {**I**<sub>1</sub>, **I**<sub>2</sub>, ..., **I**<sub>n</sub>}.
+For every sample, we first predict **F** from **I**<sub>**I**</sub> and randomly partition all frames N̂ = {**I**<sub>**I**</sub>} ∪ N into two sets N<sub>loss</sub>, N<sub>render</sub>.
+We reconstruct the frames in N<sub>loss</sub> by sampling color from N<sub>render</sub> using the camera poses and the predicted densities.
+The photometric consistency between the reconstructed frames and the frames in N<sub>loss</sub> serves as the supervision signal of the density field.
+
+<img src=assets/loss.png width=20% style="float: left;">
+The key difference to self-supervised depth prediction methods, is that by design depth prediction methods can only densely reconstruct the input image.
+In contrast, our density field formulation allows us to reconstruct any frame from any other frame.
+Consider an area of the scene, which is occluded in the input **I**<sub>**I**</sub>, but visible in two other frames **I**<sub>k</sub> , **I**<sub>1k+1</sub>, as depicted in the figure. 
+During training, we aim to reconstruct this area in **I**<sub>k</sub>. 
+The reconstruction based on colors sampled from **I**<sub>k+1</sub> will give a clear training signal to correctly predict the geometric structure of this area, even though it is occluded in **I**<sub>**I**</sub>. 
+Note, that in order to learn geometry about occluded areas, we require at least two additional views besides the input during training, i.e. to look _behind the scenes_.
