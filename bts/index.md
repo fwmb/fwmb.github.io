@@ -113,34 +113,34 @@ We use similar parameters as mentioned above. The shown sequence is ``2011_09_26
 <center>
 <table>
 <tr>
-<th>_Method_</th>
+<th style="text-align: left"><i>Method</i></th>
 <th>O<sub>acc</sub></th>
 <th>IE<sub>acc</sub></th>
 <th>IE<sub>rec</sub></th>
 </tr>
 <tr>
-<td>Depth prediction</td>
-<td>**0.93**</td>
+<td style="text-align: left">Depth prediction</td>
+<td><b>0.93</b></td>
 <td>0.00</td>
 <td>0.00</td>
 </tr>
 <tr>
-<td>Ours, 3x T (L)</td>
-<td>0.92</td>
-<td>**0.95**</td>
+<td style="text-align: left">Ours, 3x T (L)</td>
+<td><u>0.92</u></td>
+<td><b>0.95</b></td>
 <td>0.10</td>
 </tr>
 <tr>
-<td>Ours, 3x T (L + R)</td>
-<td>**0.93**</td>
+<td style="text-align: left">Ours, 3x T (L + R)</td>
+<td><b>0.93</b></td>
 <td>0.76</td>
-<td>0.12</td>
+<td><u>0.12</u></td>
 </tr>
 <tr>
-<td>Ours, 2x T (L + R + F)</td>
-<td>**0.93**</td>
-<td>0.79</td>
-<td>**0.38**</td>
+<td style="text-align: left">Ours, 2x T (L + R + F)</td>
+<td><b>0.93</b></td>
+<td><u>0.79</u></td>
+<td><b>0.38</b></td>
 </tr>
 </table>
 </center>
@@ -151,7 +151,147 @@ Depth prediction naturally has no ability to predict behind occlusions, while ou
 Inference from a single image. Samples are evenly spaced in a cuboid w = [−4m, 4m], h = [−1m, 0m], d = [3m, 20m] relative to the camera. 
 We use the same models as in the previous figure.
 
+## Depth Prediction
 
+<style type="text/css">
+.tg  {}
+.tg td{}
+.tg th{}
+.tg .tg-pb0m{text-align:center;}
+.tg .tg-obg7{font-style:italic;text-align:left;}
+.tg .tg-8d8j{text-align:center;}
+.tg .tg-za14{text-align:left;}
+.tg .tg-0pky{text-align:left;}
+.tg .tg-apkk{text-align:center;text-decoration:underline;}
+.tg .tg-fll5{font-weight:bold;text-align:center;}
+.tg .tg-0thz{font-weight:bold;text-align:left;}
+.tg .tg-7zrl{text-align:left;}
+</style>
+<center>
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-obg7"><span style="font-style:italic">Model</span></th>
+    <th class="tg-pb0m">Split</th>
+    <th class="tg-pb0m">Abs Rel</th>
+    <th class="tg-pb0m">Sq Rel</th>
+    <th class="tg-pb0m">RMSE</th>
+    <th class="tg-pb0m">RMSE Log</th>
+    <th class="tg-pb0m">A1</th>
+    <th class="tg-8d8j">A2</th>
+    <th class="tg-8d8j">A3</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-obg7">EPC++</td>
+    <td class="tg-pb0m">Eigen</td>
+    <td class="tg-pb0m">0.128</td>
+    <td class="tg-pb0m">1.132</td>
+    <td class="tg-pb0m">5.585</td>
+    <td class="tg-pb0m">0.209</td>
+    <td class="tg-pb0m">0.831</td>
+    <td class="tg-8d8j">0.945</td>
+    <td class="tg-8d8j">0.979</td>
+  </tr>
+  <tr>
+    <td class="tg-za14">Monodepth2</td>
+    <td class="tg-pb0m"></td>
+    <td class="tg-pb0m">0.106</td>
+    <td class="tg-pb0m">0.818</td>
+    <td class="tg-pb0m">4.750</td>
+    <td class="tg-pb0m">0.196</td>
+    <td class="tg-pb0m">0.874</td>
+    <td class="tg-8d8j">0.957</td>
+    <td class="tg-8d8j">0.975</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">PackNet (no stereo)</td>
+    <td class="tg-pb0m"></td>
+    <td class="tg-pb0m">0.111</td>
+    <td class="tg-pb0m">0.785</td>
+    <td class="tg-apkk">4.601</td>
+    <td class="tg-apkk">0.189</td>
+    <td class="tg-pb0m">0.878</td>
+    <td class="tg-8d8j">0.960</td>
+    <td class="tg-8d8j">0.982</td>
+  </tr>
+  <tr>
+    <td class="tg-za14">DepthHint</td>
+    <td class="tg-pb0m"></td>
+    <td class="tg-pb0m">0.105</td>
+    <td class="tg-pb0m">0.769</td>
+    <td class="tg-pb0m">4.627</td>
+    <td class="tg-pb0m">0.189</td>
+    <td class="tg-pb0m">0.875</td>
+    <td class="tg-8d8j">0.959</td>
+    <td class="tg-8d8j">0.982</td>
+  </tr>
+  <tr>
+    <td class="tg-za14">FeatDepth</td>
+    <td class="tg-fll5"></td>
+    <td class="tg-fll5">0.099</td>
+    <td class="tg-fll5">0.697</td>
+    <td class="tg-fll5">4.427</td>
+    <td class="tg-fll5">0.184</td>
+    <td class="tg-fll5">0.889</td>
+    <td class="tg-8d8j">0.963</td>
+    <td class="tg-8d8j">0.982</td>
+  </tr>
+  <tr>
+    <td class="tg-0thz">DevNet</td>
+    <td class="tg-apkk"></td>
+    <td class="tg-apkk">0.095</td>
+    <td class="tg-apkk">0.671</td>
+    <td class="tg-pb0m">4.365</td>
+    <td class="tg-pb0m">0.174</td>
+    <td class="tg-apkk">0.895</td>
+    <td class="tg-8d8j">0.970</td>
+    <td class="tg-8d8j">0.988</td>
+  </tr>
+  <tr>
+    <td class="tg-7zrl">Ours</td>
+    <td class="tg-8d8j"></td>
+    <td class="tg-8d8j">0.102</td>
+    <td class="tg-8d8j">0.751</td>
+    <td class="tg-8d8j">4.407</td>
+    <td class="tg-8d8j">0.188</td>
+    <td class="tg-8d8j">0.882</td>
+    <td class="tg-8d8j">0.961</td>
+    <td class="tg-8d8j">0.982</td>
+  </tr>
+</tbody>
+<tbody>
+  <tr>
+    <td class="tg-7zrl">MINE</td>
+    <td class="tg-8d8j">Tulsiani</td>
+    <td class="tg-8d8j">0.137</td>
+    <td class="tg-8d8j">1.993</td>
+    <td class="tg-8d8j">6.592</td>
+    <td class="tg-8d8j">0.250</td>
+    <td class="tg-8d8j">0.839</td>
+    <td class="tg-8d8j">0.940</td>
+    <td class="tg-8d8j">0.971</td>
+  </tr>
+  <tr>
+    <td class="tg-7zrl">Ours</td>
+    <td class="tg-8d8j"></td>
+    <td class="tg-8d8j">0.132</td>
+    <td class="tg-8d8j">1.936</td>
+    <td class="tg-8d8j">6.104</td>
+    <td class="tg-8d8j">0.235</td>
+    <td class="tg-8d8j">0.873</td>
+    <td class="tg-8d8j">0.951</td>
+    <td class="tg-8d8j">0.974</td>
+  </tr>
+</tbody>
+</table>
+</center>
+
+**Depth Prediction.**
+While our goal is fully volumetric scene understanding, we compare to the state of the art in depth estimation trained only with reconstruction losses. 
+Our approach achieves competitive performance with specialized methods while improving over the only other fully volumetric approach MINE. 
+DevNet performs better, but does not show any results from the volume directly.
 
 ## Novel View Synthesis
 
@@ -186,4 +326,3 @@ We use the same models as in the previous figure.
 We only use a single input frame, from which we both predict density and sample color.
 This means, that areas that are occluded in the input image do not have valid color samples.
 
-**TODO** RealEstate10K
