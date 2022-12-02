@@ -181,7 +181,7 @@ We use the same models as in the previous figure.
 </thead>
 <tbody>
   <tr>
-    <td class="tg-obg7">EPC++</td>
+    <td class="tg-pb0m">EPC++</td>
     <td class="tg-pb0m">Eigen</td>
     <td class="tg-pb0m">0.128</td>
     <td class="tg-pb0m">1.132</td>
@@ -299,9 +299,9 @@ DevNet performs better, but does not show any results from the volume directly.
 </td>
 <td style="border: none; padding: 0px;">
 <video width="100%" autoplay muted loop><source src="assets/nvs_kitti/000051.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+</td>
 </tr>
 <tr style="border: none">
-</td>
 <td style="border: none; padding: 0px;">
 <video width="100%" autoplay muted loop><source src="assets/nvs_kitti/000102.mp4" type="video/mp4">Your browser does not support the video tag.</video>
 </td>
