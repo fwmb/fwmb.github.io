@@ -1,7 +1,5 @@
 ---
-layout: page
 title: "Behind the Scenes: Density Fields for Single View Reconstruction"
-permalink: /bts
 ---
 
 <center>
