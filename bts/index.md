@@ -44,7 +44,7 @@ title: "Behind the Scenes: Density Fields for Single View Reconstruction"
 </tr>
 </table>
  <video width="100%" autoplay muted loop>
-  <source src="assets/header_vid.mp4" type="video/mp4">
+  <source src="./assets/header_vid.mp4" type="video/mp4">
 Your browser does not support the video tag.
 </video> 
 </center>
@@ -107,7 +107,7 @@ Inference is from a single image.
 Legend: n T(): n timesteps of, L: left camera, R: right camera, F: left and right fisheye camera.
 
 <video width="100%" controls autoplay muted loop>
-<source src="assets/occupancy_video_small.mp4" type="video/mp4">
+<source src="./assets/occupancy_video_small.mp4" type="video/mp4">
 Your browser does not support the video tag.
 </video> 
 
@@ -299,26 +299,26 @@ DevNet performs better, but does not show any results from the volume directly.
 <table style="border: none;">
 <tr style="border: none;">
 <td style="border: none; padding: 0px;">
-<video width="100%" autoplay muted loop><source src="assets/nvs_kitti/000039.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+<video width="100%" autoplay muted loop><source src="./assets/nvs_kitti/000039.mp4" type="video/mp4">Your browser does not support the video tag.</video>
 </td>
 <td style="border: none; padding: 0px;">
-<video width="100%" autoplay muted loop><source src="assets/nvs_kitti/000051.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+<video width="100%" autoplay muted loop><source src="./assets/nvs_kitti/000051.mp4" type="video/mp4">Your browser does not support the video tag.</video>
 </td>
 </tr>
 <tr style="border: none">
 <td style="border: none; padding: 0px;">
-<video width="100%" autoplay muted loop><source src="assets/nvs_kitti/000102.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+<video width="100%" autoplay muted loop><source src="./assets/nvs_kitti/000102.mp4" type="video/mp4">Your browser does not support the video tag.</video>
 </td>
 <td style="border: none; padding: 0px;">
-<video width="100%" autoplay muted loop><source src="assets/nvs_kitti/000196.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+<video width="100%" autoplay muted loop><source src="./assets/nvs_kitti/000196.mp4" type="video/mp4">Your browser does not support the video tag.</video>
 </td>
 </tr>
 <tr style="border: none;">
 <td style="border: none; padding: 0px;">
-<video width="100%" autoplay muted loop><source src="assets/nvs_kitti/000214.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+<video width="100%" autoplay muted loop><source src="./assets/nvs_kitti/000214.mp4" type="video/mp4">Your browser does not support the video tag.</video>
 </td>
 <td style="border: none; padding: 0px;">
-<video width="100%" autoplay muted loop><source src="assets/nvs_kitti/000397.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+<video width="100%" autoplay muted loop><source src="./assets/nvs_kitti/000397.mp4" type="video/mp4">Your browser does not support the video tag.</video>
 </td>
 </tr>
 </table>
@@ -332,24 +332,24 @@ This means, that areas that are occluded in the input image do not have valid co
 <table style="border: none;">
 <tr style="border: none;">
 <td style="border: none; padding: 0px;">
-<video width="100%" autoplay muted loop><source src="assets/nvs_re10k/00.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+<video width="100%" autoplay muted loop><source src="./assets/nvs_re10k/00.mp4" type="video/mp4">Your browser does not support the video tag.</video>
 </td>
 <td style="border: none; padding: 0px;">
-<video width="100%" autoplay muted loop><source src="assets/nvs_re10k/01.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+<video width="100%" autoplay muted loop><source src="./assets/nvs_re10k/01.mp4" type="video/mp4">Your browser does not support the video tag.</video>
 </td>
 <td style="border: none; padding: 0px;">
-<video width="100%" autoplay muted loop><source src="assets/nvs_re10k/02.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+<video width="100%" autoplay muted loop><source src="./assets/nvs_re10k/02.mp4" type="video/mp4">Your browser does not support the video tag.</video>
 </td>
 </tr>
 <tr style="border: none;">
 <td style="border: none; padding: 0px;">
-<video width="100%" autoplay muted loop><source src="assets/nvs_re10k/03.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+<video width="100%" autoplay muted loop><source src="./assets/nvs_re10k/03.mp4" type="video/mp4">Your browser does not support the video tag.</video>
 </td>
 <td style="border: none; padding: 0px;">
-<video width="100%" autoplay muted loop><source src="assets/nvs_re10k/04.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+<video width="100%" autoplay muted loop><source src="./assets/nvs_re10k/04.mp4" type="video/mp4">Your browser does not support the video tag.</video>
 </td>
 <td style="border: none; padding: 0px;">
-<video width="100%" autoplay muted loop><source src="assets/nvs_re10k/05.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+<video width="100%" autoplay muted loop><source src="./assets/nvs_re10k/05.mp4" type="video/mp4">Your browser does not support the video tag.</video>
 </td>
 </tr>
 </table>
