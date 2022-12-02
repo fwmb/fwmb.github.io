@@ -110,3 +110,32 @@ Your browser does not support the video tag.
 
 **Top-down visualization and expected ray termination depth for entire sequence.** 
 We use similar parameters as mentioned above. The shown sequence is ``2011_09_26_drive_0009``.
+
+## Novel View Synthesis
+
+<center>
+<table style="border: none;">
+<tr style="border: none;">
+<td style="border: none;">
+<video width="30%" autoplay muted loop><source src="assets/nvs_kitti/000039.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+</td>
+<td style="border: none;">
+<video width="30%" autoplay muted loop><source src="assets/nvs_kitti/000051.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+</td>
+<td style="border: none;">
+<video width="30%" autoplay muted loop><source src="assets/nvs_kitti/000102.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+</td>
+</tr>
+<tr style="border: none;">
+<td style="border: none;">
+<video width="30%" autoplay muted loop><source src="assets/nvs_kitti/000196.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+</td>
+<td style="border: none;">
+<video width="30%" autoplay muted loop><source src="assets/nvs_kitti/000214.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+</td>
+<td style="border: none;">
+<video width="30%" autoplay muted loop><source src="assets/nvs_kitti/000397.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+</td>
+</tr>
+</table>
+</center>
