@@ -3,7 +3,7 @@
 <table style="border: none;">
 <tr style="border: none;">
 <td style="border: none;"><a href="https://vision.in.tum.de/members/wimbauer">Felix Wimbauer</a><sup>1</sup></td>
-<td style="border: none;"><a href="https://nan-yang.me/">Nan Yang</a><sup>1,3</sup></td>
+<td style="border: none;"><a href="https://nan-yang.me/">Nan Yang</a><sup>1</sup></td>
 <td style="border: none;"><a href="https://chrirupp.github.io/">Christian Rupprecht</a><sup>2</sup></td>
 <td style="border: none;"><a href="https://vision.in.tum.de/members/cremers">Daniel Cremers</a><sup>1</sup></td>
 </tr>
@@ -12,7 +12,6 @@
 <tr style="border: none;">
 <td style="border: none;"><sup>1</sup>Technical University of Munich</td>
 <td style="border: none;"><sup>2</sup>University of Oxford</td>
-<td style="border: none;"><sup>3</sup>Meta</td>
 </tr>
 </table>
 <table style="border: none;">
@@ -111,6 +110,49 @@ Your browser does not support the video tag.
 **Top-down visualization and expected ray termination depth for entire sequence.** 
 We use similar parameters as mentioned above. The shown sequence is ``2011_09_26_drive_0009``.
 
+<center>
+<table>
+<tr>
+<th>_Method_</th>
+<th>O<sub>acc</sub></th>
+<th>IE<sub>acc</sub></th>
+<th>IE<sub>rec</sub></th>
+</tr>
+<tr>
+<td>Depth prediction</td>
+<td>**0.93**</td>
+<td>0.00</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>Ours, 3x T (L)</td>
+<td>0.92</td>
+<td>**0.95**</td>
+<td>0.10</td>
+</tr>
+<tr>
+<td>Ours, 3x T (L + R)</td>
+<td>**0.93**</td>
+<td>0.76</td>
+<td>0.12</td>
+</tr>
+<tr>
+<td>Ours, 2x T (L + R + F)</td>
+<td>**0.93**</td>
+<td>0.79</td>
+<td>**0.38**</td>
+</tr>
+</table>
+</center>
+
+**3D Scene Occupancy Accuracy.** 
+We evaluate the capability of the model to predict occupancy behind objects in the image. 
+Depth prediction naturally has no ability to predict behind occlusions, while our method improves when training with more views. 
+Inference from a single image. Samples are evenly spaced in a cuboid w = [−4m, 4m], h = [−1m, 0m], d = [3m, 20m] relative to the camera. 
+We use the same models as in the previous figure.
+
+
+
 ## Novel View Synthesis
 
 <center>
@@ -140,6 +182,8 @@ We use similar parameters as mentioned above. The shown sequence is ``2011_09_26
 </table>
 </center>
 
-**Novel-view synthesis on KITTI**.
+**Novel-view synthesis on KITTI.**
 We only use a single input frame, from which we both predict density and sample color.
 This means, that areas that are occluded in the input image do not have valid color samples.
+
+**TODO** RealEstate10K
