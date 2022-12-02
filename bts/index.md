@@ -161,11 +161,9 @@ We use the same models as in the previous figure.
 .tg .tg-obg7{font-style:italic;text-align:left;}
 .tg .tg-8d8j{text-align:center;}
 .tg .tg-za14{text-align:left;}
-.tg .tg-0pky{text-align:left;}
 .tg .tg-apkk{text-align:center;text-decoration:underline;}
 .tg .tg-fll5{font-weight:bold;text-align:center;}
 .tg .tg-0thz{font-weight:bold;text-align:left;}
-.tg .tg-7zrl{text-align:left;}
 </style>
 <center>
 <table class="tg">
@@ -206,7 +204,7 @@ We use the same models as in the previous figure.
     <td class="tg-8d8j">0.975</td>
   </tr>
   <tr>
-    <td class="tg-0pky">PackNet (no stereo)</td>
+    <td class="tg-za14">PackNet (no stereo)</td>
     <td class="tg-pb0m"></td>
     <td class="tg-pb0m">0.111</td>
     <td class="tg-pb0m">0.785</td>
@@ -239,7 +237,7 @@ We use the same models as in the previous figure.
     <td class="tg-8d8j">0.982</td>
   </tr>
   <tr>
-    <td class="tg-0thz">DevNet</td>
+    <td class="tg-za14">DevNet</td>
     <td class="tg-apkk"></td>
     <td class="tg-apkk">0.095</td>
     <td class="tg-apkk">0.671</td>
@@ -250,7 +248,7 @@ We use the same models as in the previous figure.
     <td class="tg-8d8j">0.988</td>
   </tr>
   <tr>
-    <td class="tg-7zrl">Ours</td>
+    <td class="tg-0thz">Ours</td>
     <td class="tg-8d8j"></td>
     <td class="tg-8d8j">0.102</td>
     <td class="tg-8d8j">0.751</td>
@@ -260,10 +258,9 @@ We use the same models as in the previous figure.
     <td class="tg-8d8j">0.961</td>
     <td class="tg-8d8j">0.982</td>
   </tr>
-</tbody>
-<tbody>
+  <tr style="height: 5px;"></tr>
   <tr>
-    <td class="tg-7zrl">MINE</td>
+    <td class="tg-za14">MINE</td>
     <td class="tg-8d8j">Tulsiani</td>
     <td class="tg-8d8j">0.137</td>
     <td class="tg-8d8j">1.993</td>
@@ -274,7 +271,7 @@ We use the same models as in the previous figure.
     <td class="tg-8d8j">0.971</td>
   </tr>
   <tr>
-    <td class="tg-7zrl">Ours</td>
+    <td class="tg-0thz">Ours</td>
     <td class="tg-8d8j"></td>
     <td class="tg-8d8j">0.132</td>
     <td class="tg-8d8j">1.936</td>
@@ -326,3 +323,33 @@ DevNet performs better, but does not show any results from the volume directly.
 We only use a single input frame, from which we both predict density and sample color.
 This means, that areas that are occluded in the input image do not have valid color samples.
 
+<center>
+<table style="border: none;">
+<tr style="border: none;">
+<td style="border: none; padding: 0px;">
+<video width="100%" autoplay muted loop><source src="assets/nvs_re10k/00.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+</td>
+<td style="border: none; padding: 0px;">
+<video width="100%" autoplay muted loop><source src="assets/nvs_re10k/01.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+</td>
+<td style="border: none; padding: 0px;">
+<video width="100%" autoplay muted loop><source src="assets/nvs_re10k/02.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+</td>
+</tr>
+<tr style="border: none;">
+<td style="border: none; padding: 0px;">
+<video width="100%" autoplay muted loop><source src="assets/nvs_re10k/03.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+</td>
+<td style="border: none; padding: 0px;">
+<video width="100%" autoplay muted loop><source src="assets/nvs_re10k/04.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+</td>
+<td style="border: none; padding: 0px;">
+<video width="100%" autoplay muted loop><source src="assets/nvs_re10k/05.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+</td>
+</tr>
+</table>
+</center>
+
+**Novel-view synthesis on RealEstate10K.**
+We only use a single input frame, from which we both predict density and sample color.
+This means, that areas that are occluded in the input image do not have valid color samples.
