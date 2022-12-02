@@ -113,7 +113,7 @@ We use similar parameters as mentioned above. The shown sequence is ``2011_09_26
 <center>
 <table>
 <tr>
-<th style="text-align: left"><i>Method</i></th>
+<th style="text-align: left"><i>Model</i></th>
 <th>O<sub>acc</sub></th>
 <th>IE<sub>acc</sub></th>
 <th>IE<sub>rec</sub></th>
@@ -159,7 +159,6 @@ We use the same models as in the previous figure.
 .tg th{}
 .tg .tg-pb0m{text-align:center;}
 .tg .tg-obg7{font-style:italic;text-align:left;}
-.tg .tg-8d8j{text-align:center;}
 .tg .tg-za14{text-align:left;}
 .tg .tg-apkk{text-align:center;text-decoration:underline;}
 .tg .tg-fll5{font-weight:bold;text-align:center;}
@@ -175,9 +174,9 @@ We use the same models as in the previous figure.
     <th class="tg-pb0m">Sq Rel</th>
     <th class="tg-pb0m">RMSE</th>
     <th class="tg-pb0m">RMSE Log</th>
-    <th class="tg-pb0m">A1</th>
-    <th class="tg-8d8j">A2</th>
-    <th class="tg-8d8j">A3</th>
+    <th class="tg-pb0m">α < 1.25</th>
+    <th class="tg-pb0m">α < 1.25²</th>
+    <th class="tg-pb0m">α < 1.25³</th>
   </tr>
 </thead>
 <tbody>
@@ -189,8 +188,8 @@ We use the same models as in the previous figure.
     <td class="tg-pb0m">5.585</td>
     <td class="tg-pb0m">0.209</td>
     <td class="tg-pb0m">0.831</td>
-    <td class="tg-8d8j">0.945</td>
-    <td class="tg-8d8j">0.979</td>
+    <td class="tg-pb0m">0.945</td>
+    <td class="tg-pb0m">0.979</td>
   </tr>
   <tr>
     <td class="tg-za14">Monodepth2</td>
@@ -200,19 +199,19 @@ We use the same models as in the previous figure.
     <td class="tg-pb0m">4.750</td>
     <td class="tg-pb0m">0.196</td>
     <td class="tg-pb0m">0.874</td>
-    <td class="tg-8d8j">0.957</td>
-    <td class="tg-8d8j">0.975</td>
+    <td class="tg-pb0m">0.957</td>
+    <td class="tg-pb0m">0.975</td>
   </tr>
   <tr>
     <td class="tg-za14">PackNet (no stereo)</td>
     <td class="tg-pb0m"></td>
     <td class="tg-pb0m">0.111</td>
     <td class="tg-pb0m">0.785</td>
-    <td class="tg-apkk">4.601</td>
+    <td class="tg-pb0m">4.601</td>
     <td class="tg-apkk">0.189</td>
     <td class="tg-pb0m">0.878</td>
-    <td class="tg-8d8j">0.960</td>
-    <td class="tg-8d8j">0.982</td>
+    <td class="tg-pb0m">0.960</td>
+    <td class="tg-pb0m">0.982</td>
   </tr>
   <tr>
     <td class="tg-za14">DepthHint</td>
@@ -222,64 +221,64 @@ We use the same models as in the previous figure.
     <td class="tg-pb0m">4.627</td>
     <td class="tg-pb0m">0.189</td>
     <td class="tg-pb0m">0.875</td>
-    <td class="tg-8d8j">0.959</td>
-    <td class="tg-8d8j">0.982</td>
+    <td class="tg-pb0m">0.959</td>
+    <td class="tg-pb0m">0.982</td>
   </tr>
   <tr>
     <td class="tg-za14">FeatDepth</td>
     <td class="tg-fll5"></td>
-    <td class="tg-fll5">0.099</td>
-    <td class="tg-fll5">0.697</td>
-    <td class="tg-fll5">4.427</td>
-    <td class="tg-fll5">0.184</td>
-    <td class="tg-fll5">0.889</td>
-    <td class="tg-8d8j">0.963</td>
-    <td class="tg-8d8j">0.982</td>
+    <td class="tg-apkk">0.099</td>
+    <td class="tg-apkk">0.697</td>
+    <td class="tg-pb0m">4.427</td>
+    <td class="tg-apkk">0.184</td>
+    <td class="tg-apkk">0.889</td>
+    <td class="tg-apkk">0.963</td>
+    <td class="tg-apkk">0.982</td>
   </tr>
   <tr>
     <td class="tg-za14">DevNet</td>
     <td class="tg-apkk"></td>
-    <td class="tg-apkk">0.095</td>
-    <td class="tg-apkk">0.671</td>
-    <td class="tg-pb0m">4.365</td>
-    <td class="tg-pb0m">0.174</td>
-    <td class="tg-apkk">0.895</td>
-    <td class="tg-8d8j">0.970</td>
-    <td class="tg-8d8j">0.988</td>
+    <td class="tg-fll5">0.095</td>
+    <td class="tg-fll5">0.671</td>
+    <td class="tg-fll5">4.365</td>
+    <td class="tg-fll5">0.174</td>
+    <td class="tg-fll5">0.895</td>
+    <td class="tg-fll5">0.970</td>
+    <td class="tg-fll5">0.988</td>
   </tr>
   <tr>
     <td class="tg-0thz">Ours</td>
-    <td class="tg-8d8j"></td>
-    <td class="tg-8d8j">0.102</td>
-    <td class="tg-8d8j">0.751</td>
-    <td class="tg-8d8j">4.407</td>
-    <td class="tg-8d8j">0.188</td>
-    <td class="tg-8d8j">0.882</td>
-    <td class="tg-8d8j">0.961</td>
-    <td class="tg-8d8j">0.982</td>
+    <td class="tg-pb0m"></td>
+    <td class="tg-pb0m">0.102</td>
+    <td class="tg-pb0m">0.751</td>
+    <td class="tg-apkk">4.407</td>
+    <td class="tg-pb0m">0.188</td>
+    <td class="tg-pb0m">0.882</td>
+    <td class="tg-pb0m">0.961</td>
+    <td class="tg-apkk">0.982</td>
   </tr>
   <tr style="height: 5px;"></tr>
   <tr>
     <td class="tg-za14">MINE</td>
-    <td class="tg-8d8j">Tulsiani</td>
-    <td class="tg-8d8j">0.137</td>
-    <td class="tg-8d8j">1.993</td>
-    <td class="tg-8d8j">6.592</td>
-    <td class="tg-8d8j">0.250</td>
-    <td class="tg-8d8j">0.839</td>
-    <td class="tg-8d8j">0.940</td>
-    <td class="tg-8d8j">0.971</td>
+    <td class="tg-pb0m">Tulsiani</td>
+    <td class="tg-pb0m">0.137</td>
+    <td class="tg-pb0m">1.993</td>
+    <td class="tg-pb0m">6.592</td>
+    <td class="tg-pb0m">0.250</td>
+    <td class="tg-pb0m">0.839</td>
+    <td class="tg-pb0m">0.940</td>
+    <td class="tg-pb0m">0.971</td>
   </tr>
   <tr>
     <td class="tg-0thz">Ours</td>
-    <td class="tg-8d8j"></td>
-    <td class="tg-8d8j">0.132</td>
-    <td class="tg-8d8j">1.936</td>
-    <td class="tg-8d8j">6.104</td>
-    <td class="tg-8d8j">0.235</td>
-    <td class="tg-8d8j">0.873</td>
-    <td class="tg-8d8j">0.951</td>
-    <td class="tg-8d8j">0.974</td>
+    <td class="tg-pb0m"></td>
+    <td class="tg-fll5">0.132</td>
+    <td class="tg-fll5">1.936</td>
+    <td class="tg-fll5">6.104</td>
+    <td class="tg-fll5">0.235</td>
+    <td class="tg-fll5">0.873</td>
+    <td class="tg-fll5">0.951</td>
+    <td class="tg-fll5">0.974</td>
   </tr>
 </tbody>
 </table>
@@ -300,15 +299,17 @@ DevNet performs better, but does not show any results from the volume directly.
 </td>
 <td style="border: none; padding: 0px;">
 <video width="100%" autoplay muted loop><source src="assets/nvs_kitti/000051.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+</tr>
+<tr style="border: none">
 </td>
 <td style="border: none; padding: 0px;">
 <video width="100%" autoplay muted loop><source src="assets/nvs_kitti/000102.mp4" type="video/mp4">Your browser does not support the video tag.</video>
 </td>
-</tr>
-<tr style="border: none;">
 <td style="border: none; padding: 0px;">
 <video width="100%" autoplay muted loop><source src="assets/nvs_kitti/000196.mp4" type="video/mp4">Your browser does not support the video tag.</video>
 </td>
+</tr>
+<tr style="border: none;">
 <td style="border: none; padding: 0px;">
 <video width="100%" autoplay muted loop><source src="assets/nvs_kitti/000214.mp4" type="video/mp4">Your browser does not support the video tag.</video>
 </td>
