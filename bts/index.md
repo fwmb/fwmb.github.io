@@ -353,3 +353,13 @@ This means, that areas that are occluded in the input image do not have valid co
 **Novel-view synthesis on RealEstate10K.**
 We only use a single input frame, from which we both predict density and sample color.
 This means, that areas that are occluded in the input image do not have valid color samples.
+
+# Citation
+
+```
+@article{wimbauer2022behind,
+  title={Behind the Scenes: Density Fields for Single View Reconstruction},
+  author={Wimbauer, Felix and Yang, Nan and Rupprecht, Christian and Cremers, Daniel},
+  year={2022}
+}
+```
