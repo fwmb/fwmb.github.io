@@ -116,26 +116,30 @@ We use similar parameters as mentioned above. The shown sequence is ``2011_09_26
 <center>
 <table style="border: none;">
 <tr style="border: none;">
-<td style="border: none;">
-<video width="30%" autoplay muted loop><source src="assets/nvs_kitti/000039.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+<td style="border: none; padding: 0px;">
+<video width="100%" autoplay muted loop><source src="assets/nvs_kitti/000039.mp4" type="video/mp4">Your browser does not support the video tag.</video>
 </td>
-<td style="border: none;">
-<video width="30%" autoplay muted loop><source src="assets/nvs_kitti/000051.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+<td style="border: none; padding: 0px;">
+<video width="100%" autoplay muted loop><source src="assets/nvs_kitti/000051.mp4" type="video/mp4">Your browser does not support the video tag.</video>
 </td>
-<td style="border: none;">
-<video width="30%" autoplay muted loop><source src="assets/nvs_kitti/000102.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+<td style="border: none; padding: 0px;">
+<video width="100%" autoplay muted loop><source src="assets/nvs_kitti/000102.mp4" type="video/mp4">Your browser does not support the video tag.</video>
 </td>
 </tr>
 <tr style="border: none;">
-<td style="border: none;">
-<video width="30%" autoplay muted loop><source src="assets/nvs_kitti/000196.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+<td style="border: none; padding: 0px;">
+<video width="100%" autoplay muted loop><source src="assets/nvs_kitti/000196.mp4" type="video/mp4">Your browser does not support the video tag.</video>
 </td>
-<td style="border: none;">
-<video width="30%" autoplay muted loop><source src="assets/nvs_kitti/000214.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+<td style="border: none; padding: 0px;">
+<video width="100%" autoplay muted loop><source src="assets/nvs_kitti/000214.mp4" type="video/mp4">Your browser does not support the video tag.</video>
 </td>
-<td style="border: none;">
-<video width="30%" autoplay muted loop><source src="assets/nvs_kitti/000397.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+<td style="border: none; padding: 0px;">
+<video width="100%" autoplay muted loop><source src="assets/nvs_kitti/000397.mp4" type="video/mp4">Your browser does not support the video tag.</video>
 </td>
 </tr>
 </table>
 </center>
+
+**Novel-view synthesis on KITTI**.
+We only use a single input frame, from which we both predict density and sample color.
+This means, that areas that are occluded in the input image do not have valid color samples.
