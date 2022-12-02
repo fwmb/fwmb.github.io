@@ -1,3 +1,9 @@
+---
+layout: page
+title: "Behind the Scenes: Density Fields for Single View Reconstruction"
+permalink: /bts
+---
+
 <center>
 <h1>Behind the Scenes: Density Fields for Single View Reconstruction</h1>
 <table style="border: none;">
