@@ -30,7 +30,6 @@ title: "Behind the Scenes: Density Fields for Single View Reconstruction"
 </div>
 </a>
 </td>
-<br>
 <td style="border: none; display: initial;">
 <a href="#" style="color: #ffffff">
 <div class="link_button">
@@ -174,7 +173,7 @@ We use the same models as in the previous figure.
 .tg .tg-0thz{font-weight:bold;text-align:left;}
 </style>
 <center>
-<table class="tg">
+<table class="tg" style="display: initial">
 <thead>
   <tr>
     <th class="tg-obg7"><span style="font-style:italic">Model</span></th>
@@ -190,7 +189,7 @@ We use the same models as in the previous figure.
 </thead>
 <tbody>
   <tr>
-    <td class="tg-pb0m">EPC++</td>
+    <td class="tg-za14">EPC++</td>
     <td class="tg-pb0m">Eigen</td>
     <td class="tg-pb0m">0.128</td>
     <td class="tg-pb0m">1.132</td>
