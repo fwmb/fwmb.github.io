@@ -3,8 +3,9 @@ title: "Behind the Scenes: Density Fields for Single View Reconstruction"
 ---
 
 <center>
-<h1>Behind the Scenes: Density Fields for Single View Reconstruction</h1>
-<table style="border: none;">
+<h1 style="display: initial;">Behind the Scenes: Density Fields for Single View Reconstruction</h1>
+<br>
+<table style="border: none; display: initial;">
 <tr style="border: none;">
 <td style="border: none;"><a href="https://vision.in.tum.de/members/wimbauer">Felix Wimbauer</a><sup>1</sup></td>
 <td style="border: none;"><a href="https://nan-yang.me/">Nan Yang</a><sup>1</sup></td>
@@ -12,13 +13,15 @@ title: "Behind the Scenes: Density Fields for Single View Reconstruction"
 <td style="border: none;"><a href="https://vision.in.tum.de/members/cremers">Daniel Cremers</a><sup>1</sup></td>
 </tr>
 </table>
-<table style="border: none;">
+<br>
+<table style="border: none; display: initial;">
 <tr style="border: none;">
 <td style="border: none;"><sup>1</sup>Technical University of Munich</td>
 <td style="border: none;"><sup>2</sup>University of Oxford</td>
 </tr>
 </table>
-<table style="border: none;">
+<br>
+<table style="border: none; display: initial;">
 <tr style="border: none;">
 <td style="border: none;">
 <a href="#" style="color: #ffffff">
@@ -27,7 +30,8 @@ title: "Behind the Scenes: Density Fields for Single View Reconstruction"
 </div>
 </a>
 </td>
-<td style="border: none;">
+<br>
+<td style="border: none; display: initial;">
 <a href="#" style="color: #ffffff">
 <div class="link_button">
 <i class="bi bi-github"></i> Code (Soon)
@@ -43,6 +47,7 @@ title: "Behind the Scenes: Density Fields for Single View Reconstruction"
 </td>
 </tr>
 </table>
+<br>
  <video width="100%" autoplay muted loop>
   <source src="./assets/header_vid.mp4" type="video/mp4">
 Your browser does not support the video tag.
@@ -115,7 +120,7 @@ Your browser does not support the video tag.
 We use similar parameters as mentioned above. The shown sequence is ``2011_09_26_drive_0009``.
 
 <center>
-<table>
+<table style="display: initial;">
 <tr>
 <th style="text-align: left"><i>Model</i></th>
 <th>O<sub>acc</sub></th>
@@ -158,7 +163,7 @@ We use the same models as in the previous figure.
 ## Depth Prediction
 
 <style type="text/css">
-.tg  {}
+.tg  {display: initial}
 .tg td{}
 .tg th{}
 .tg .tg-pb0m{text-align:center;}
@@ -296,7 +301,7 @@ DevNet performs better, but does not show any results from the volume directly.
 ## Novel View Synthesis
 
 <center>
-<table style="border: none;">
+<table style="border: none; display: initial">
 <tr style="border: none;">
 <td style="border: none; padding: 0px;">
 <video width="100%" autoplay muted loop><source src="./assets/nvs_kitti/000039.mp4" type="video/mp4">Your browser does not support the video tag.</video>
@@ -329,7 +334,7 @@ We only use a single input frame, from which we both predict density and sample 
 This means, that areas that are occluded in the input image do not have valid color samples.
 
 <center>
-<table style="border: none;">
+<table style="border: none; display: initial">
 <tr style="border: none;">
 <td style="border: none; padding: 0px;">
 <video width="100%" autoplay muted loop><source src="./assets/nvs_re10k/00.mp4" type="video/mp4">Your browser does not support the video tag.</video>
@@ -368,3 +373,8 @@ This means, that areas that are occluded in the input image do not have valid co
   year={2022}
 }
 ```
+
+# Acknowledgements
+
+This work was supported by the ERC Advanced Grant SIMULACRON, the GNI project AI4Twinning and the Munich Center for Machine Learning.
+C. R. is supported by VisualAI EP/T028572/1 and ERC-UNION-CoG-101001212.
