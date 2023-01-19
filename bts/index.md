@@ -23,9 +23,9 @@ title: "Behind the Scenes: Density Fields for Single View Reconstruction"
 <table style="border: none; display: initial;">
 <tr style="border: none;">
 <td style="border: none;">
-<a href="#" style="color: #ffffff">
+<a href="https://arxiv.org/abs/2301.07668" style="color: #ffffff">
 <div class="link_button">
-<i class="bi bi-file-earmark-richtext"></i> Paper (Soon)
+<i class="bi bi-file-earmark-richtext"></i> Paper
 </div>
 </a>
 </td>
