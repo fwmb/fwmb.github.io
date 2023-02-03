@@ -365,10 +365,11 @@ This means, that areas that are occluded in the input image do not have valid co
 # Citation
 
 ```
-@article{wimbauer2022behind,
+@article{wimbauer2023behind,
   title={Behind the Scenes: Density Fields for Single View Reconstruction},
   author={Wimbauer, Felix and Yang, Nan and Rupprecht, Christian and Cremers, Daniel},
-  year={2022}
+  journal={arXiv preprint arXiv:2301.07668},
+  year={2023}
 }
 ```
 
