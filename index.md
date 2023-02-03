@@ -1,3 +1,7 @@
+---
+title: "Felix Wimbauer"
+---
+
 # Felix Wimbauer
 
 [LinkedIn](https://www.linkedin.com/in/felixwimbauer/)
