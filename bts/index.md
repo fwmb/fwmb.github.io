@@ -4,7 +4,7 @@ title: "Behind the Scenes: Density Fields for Single View Reconstruction"
 
 <center>
 <h1 style="display: block;">Behind the Scenes: Density Fields for Single View Reconstruction</h1>
-<h2 style="display: block;">CVPR 2023</h2>
+CVPR 2023 <br>
 <table style="border: none; display: initial;">
 <tr style="border: none;">
 <td style="border: none;"><a href="https://vision.in.tum.de/members/wimbauer">Felix Wimbauer</a><sup>1</sup></td>
