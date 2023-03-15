@@ -100,7 +100,7 @@ Note, that in order to learn geometry about occluded areas, we require at least 
 
 ## Occupancy Estimation
 
-![Top-Down Results](./assets/profile_2.png)
+![Top-Down Results](./assets/profile.png)
 **Top-down visualization of the occupancy map predicted by different methods.** 
 We show an area of x = [−15m, 15m], z = [5m, 30m] and aggregate density from the y-coordinate of the camera 1m downward. 
 Depth prediction methods such as MonoDepth2 do not predict a full 3D volume. 
@@ -119,37 +119,66 @@ Your browser does not support the video tag.
 We use similar parameters as mentioned above. The shown sequence is ``2011_09_26_drive_0009``.
 
 <center>
-<table style="display: initial;">
-<tr>
-<th style="text-align: left"><i>Model</i></th>
-<th>O<sub>acc</sub></th>
-<th>IE<sub>acc</sub></th>
-<th>IE<sub>rec</sub></th>
-</tr>
-<tr>
-<td style="text-align: left">Depth prediction</td>
-<td><b>0.93</b></td>
-<td>0.00</td>
-<td>0.00</td>
-</tr>
-<tr>
-<td style="text-align: left">Ours, 3x T (L)</td>
-<td><u>0.92</u></td>
-<td><b>0.95</b></td>
-<td>0.10</td>
-</tr>
-<tr>
-<td style="text-align: left">Ours, 3x T (L + R)</td>
-<td><b>0.93</b></td>
-<td>0.76</td>
-<td><u>0.12</u></td>
-</tr>
-<tr>
-<td style="text-align: left">Ours, 2x T (L + R + F)</td>
-<td><b>0.93</b></td>
-<td><u>0.79</u></td>
-<td><b>0.38</b></td>
-</tr>
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-1wig{font-weight:bold;text-align:left;vertical-align:top}
+.tg .tg-baqh{text-align:center;vertical-align:top}
+.tg .tg-6t3r{font-style:italic;font-weight:bold;text-align:left;vertical-align:top}
+.tg .tg-amwm{font-weight:bold;text-align:center;vertical-align:top}
+.tg .tg-0lax{text-align:left;vertical-align:top}
+.tg .tg-if35{text-align:center;text-decoration:underline;vertical-align:top}
+</style>
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-6t3r">Model</th>
+    <th class="tg-amwm">O<sub>acc</sub></th>
+    <th class="tg-amwm">IE<sub>acc</sub></th>
+    <th class="tg-amwm">IE<sub>rec</sub></th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-0lax">Depth</td>
+    <td class="tg-amwm">0.95</td>
+    <td class="tg-baqh">n/a</td>
+    <td class="tg-baqh">n/a</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">Depth + 4m</td>
+    <td class="tg-baqh">0.92</td>
+    <td class="tg-baqh">0.64</td>
+    <td class="tg-baqh">0.23</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">PixelNeRF</td>
+    <td class="tg-baqh">0.93</td>
+    <td class="tg-baqh">0.64</td>
+    <td class="tg-if35">0.41</td>
+  </tr>
+  <tr>
+    <td class="tg-1wig"><span style="font-style:normal">Ours (No S, F)</span></td>
+    <td class="tg-baqh">0.93</td>
+    <td class="tg-baqh">0.69</td>
+    <td class="tg-baqh">0.10</td>
+  </tr>
+  <tr>
+    <td class="tg-1wig">Ours (No F)</td>
+    <td class="tg-if35">0.94</td>
+    <td class="tg-if35">0.73</td>
+    <td class="tg-baqh">0.16</td>
+  </tr>
+  <tr>
+    <td class="tg-1wig">Ours</td>
+    <td class="tg-amwm">0.95</td>
+    <td class="tg-amwm">0.82</td>
+    <td class="tg-amwm">0.47</td>
+  </tr>
+</tbody>
 </table>
 </center>
 
@@ -189,8 +218,19 @@ We use the same models as in the previous figure.
 </thead>
 <tbody>
   <tr>
-    <td class="tg-za14">EPC++</td>
+    <td class="tg-za14">PixelNeRF</td>
     <td class="tg-pb0m">Eigen</td>
+    <td class="tg-pb0m">0.130</td>
+    <td class="tg-pb0m">1.241</td>
+    <td class="tg-pb0m">5.134</td>
+    <td class="tg-pb0m">0.220</td>
+    <td class="tg-pb0m">0.845</td>
+    <td class="tg-pb0m">0.943</td>
+    <td class="tg-pb0m">0.974</td>
+  </tr>
+  <tr>
+    <td class="tg-za14">EPC++</td>
+    <td class="tg-pb0m"></td>
     <td class="tg-pb0m">0.128</td>
     <td class="tg-pb0m">1.132</td>
     <td class="tg-pb0m">5.585</td>
