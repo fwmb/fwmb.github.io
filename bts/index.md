@@ -130,7 +130,7 @@ We use similar parameters as mentioned above. The shown sequence is ``2011_09_26
 .tg .tg-if35{text-align:center;text-decoration:underline;vertical-align:top}
 </style>
 <center>
-<table class="tg">
+<table class="tg"  style="display: initial">
 <thead>
   <tr>
     <th class="tg-6t3r">Model</th>
