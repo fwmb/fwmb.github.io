@@ -118,6 +118,14 @@ Your browser does not support the video tag.
 **Top-down visualization and expected ray termination depth for entire sequence.** 
 We use similar parameters as mentioned above. The shown sequence is ``2013_05_28_drive_0000``.
 
+<video width="100%" controls autoplay muted loop>
+<source src="./assets/transition_2.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video> 
+
+**Smooth transition from expected ray termination depth to novel view synthesis to birds-eye occupancy.** 
+We use similar parameters as mentioned above. The shown sequence is ``2013_05_28_drive_0002``.
+
 <style type="text/css">
 .tg  {display: initial}
 .tg td{}
