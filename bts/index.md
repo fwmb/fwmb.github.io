@@ -116,7 +116,7 @@ Your browser does not support the video tag.
 </video> 
 
 **Top-down visualization and expected ray termination depth for entire sequence.** 
-We use similar parameters as mentioned above. The shown sequence is ``2011_09_26_drive_0009``.
+We use similar parameters as mentioned above. The shown sequence is ``2013_05_28_drive_0000``.
 
 <style type="text/css">
 .tg  {display: initial}
