@@ -118,13 +118,10 @@ Your browser does not support the video tag.
 **Top-down visualization and expected ray termination depth for entire sequence.** 
 We use similar parameters as mentioned above. The shown sequence is ``2011_09_26_drive_0009``.
 
-<center>
 <style type="text/css">
 .tg  {display: initial}
-.tg td{font-family:Arial, sans-serif;font-size:14px;
-  overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg th{font-family:Arial, sans-serif;font-size:14px;
-  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg td{}
+.tg th{}
 .tg .tg-1wig{font-weight:bold;text-align:left;vertical-align:top}
 .tg .tg-baqh{text-align:center;vertical-align:top}
 .tg .tg-6t3r{font-style:italic;font-weight:bold;text-align:left;vertical-align:top}
@@ -132,6 +129,7 @@ We use similar parameters as mentioned above. The shown sequence is ``2011_09_26
 .tg .tg-0lax{text-align:left;vertical-align:top}
 .tg .tg-if35{text-align:center;text-decoration:underline;vertical-align:top}
 </style>
+<center>
 <table class="tg">
 <thead>
   <tr>
