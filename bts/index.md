@@ -120,7 +120,7 @@ We use similar parameters as mentioned above. The shown sequence is ``2011_09_26
 
 <center>
 <style type="text/css">
-.tg  {border-collapse:collapse;border-spacing:0;}
+.tg  {display: initial}
 .tg td{font-family:Arial, sans-serif;font-size:14px;
   overflow:hidden;padding:10px 5px;word-break:normal;}
 .tg th{font-family:Arial, sans-serif;font-size:14px;
