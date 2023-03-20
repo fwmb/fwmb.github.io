@@ -7,17 +7,18 @@ title: "Behind the Scenes: Density Fields for Single View Reconstruction"
 CVPR 2023 <br>
 <table style="border: none; display: initial;">
 <tr style="border: none;">
-<td style="border: none;"><a href="https://vision.in.tum.de/members/wimbauer">Felix Wimbauer</a><sup>1</sup></td>
+<td style="border: none;"><a href="https://vision.in.tum.de/members/wimbauer">Felix Wimbauer</a><sup>1,2</sup></td>
 <td style="border: none;"><a href="https://nan-yang.me/">Nan Yang</a><sup>1</sup></td>
-<td style="border: none;"><a href="https://chrirupp.github.io/">Christian Rupprecht</a><sup>2</sup></td>
-<td style="border: none;"><a href="https://vision.in.tum.de/members/cremers">Daniel Cremers</a><sup>1</sup></td>
+<td style="border: none;"><a href="https://chrirupp.github.io/">Christian Rupprecht</a><sup>3</sup></td>
+<td style="border: none;"><a href="https://vision.in.tum.de/members/cremers">Daniel Cremers</a><sup>1,2,3</sup></td>
 </tr>
 </table>
 <br>
 <table style="border: none; display: initial;">
 <tr style="border: none;">
 <td style="border: none;"><sup>1</sup>Technical University of Munich</td>
-<td style="border: none;"><sup>2</sup>University of Oxford</td>
+<td style="border: none;"><sup>2</sup>MCML</td>
+<td style="border: none;"><sup>3</sup>University of Oxford</td>
 </tr>
 </table>
 <br>
@@ -422,5 +423,5 @@ This means, that areas that are occluded in the input image do not have valid co
 
 # Acknowledgements
 
-This work was supported by the ERC Advanced Grant SIMULACRON, the GNI project AI4Twinning and the Munich Center for Machine Learning.
+This work was supported by the ERC Advanced Grant SIMULACRON, by the Munich Center for Machine Learning and by the EPSRC Programme Grant VisualAI EP/T028572/1.
 C. R. is supported by VisualAI EP/T028572/1 and ERC-UNION-CoG-101001212.
