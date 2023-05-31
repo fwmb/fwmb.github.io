@@ -39,9 +39,9 @@ CVPR 2023 <br>
 </a>
 </td>
 <td style="border: none;">
-<a href="#" style="color: #ffffff">
+<a href="https://youtu.be/0VGKPmomrR8" style="color: #ffffff">
 <div class="link_button">
-<i class="bi bi-youtube"></i> Video (Soon)
+<i class="bi bi-youtube"></i> Video
 </div>
 </a>
 </td>
