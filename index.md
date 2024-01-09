@@ -20,14 +20,14 @@ Diffusion models have recently revolutionized the field of image synthesis due t
 
 ### S4C: Self-Supervised Semantic Scene Completion with Neural Fields (3DV 2024)
 
-[Project Page](https://ahayler.github.io/publications/s4c/) | [Paper](https://arxiv.org/abs/2310.07522)
+[Project Page](https://ahayler.github.io/publications/s4c/) | [Paper](https://arxiv.org/abs/2310.07522) | [Code](https://github.com/ahayler/s4c)
 
 Our proposed method can reconstruct a scene from a single image and only relies on videos and pseudo segmentation ground truth generated from off-the-shelf image segmentation network during training. Unlike existing methods, which use discrete voxel grids, we represent scenes as implicit semantic fields. This formulation allows querying any point within the camera frustum for occupancy and semantic class. Our architecture is trained through rendering-based self-supervised losses. Nonetheless, our method achieves performance close to fully supervised state-of-the-art methods. Additionally, our method demonstrates strong generalization capabilities and can synthesize accurate segmentation maps for far away viewpoints.
 
 
 ### Behind the Scenes: Density Fields for Single View Reconstruction (CVPR 2023)
 
-[Project Page](https://fwmb.github.io/bts/) | [Paper](https://arxiv.org/abs/2301.07668)
+[Project Page](https://fwmb.github.io/bts/) | [Paper](https://arxiv.org/abs/2301.07668) | [Code](https://github.com/Brummi/BehindTheScenes) | [Video](https://youtu.be/0VGKPmomrR8)
 
 Inferring a meaningful geometric scene representation from a single image is a fundamental problem in computer vision. Approaches based on traditional depth map prediction can only reason about areas that are visible in the image. Currently, neural radiance fields (NeRFs) can capture true 3D including color but are too complex to be generated from a single image. As an alternative, we introduce a neural network that predicts an implicit density field from a single image. It maps every location in the frustum of the image to volumetric density. Our network can be trained through self-supervision from only video data. By not storing color in the implicit volume, but directly sampling color from the available views during training, our scene representation becomes significantly less complex compared to NeRFs, and we can train neural networks to predict it. Thus, we can apply volume rendering to perform both depth prediction and novel view synthesis. In our experiments, we show that our method is able to predict meaningful geometry for regions that are occluded in the input image. Additionally, we demonstrate the potential of our approach on three datasets for depth prediction and novel-view synthesis.
 
