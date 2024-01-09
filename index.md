@@ -12,7 +12,20 @@ title: "Felix Wimbauer"
 
 ## Projects
 
-### Behind the Scenes: Density Fields for Single View Reconstruction
+### Cache Me if You Can: Accelerating Diffusion Models through Block Caching
+
+[Project Page](https://fwmb.github.io/blockcaching/) | [Paper](https://arxiv.org/abs/2312.03209)
+
+Diffusion models have recently revolutionized the field of image synthesis due to their ability to generate photorealistic images. However, one of the major drawbacks of diffusion models is that the image generation process is costly. A large image-to-image network has to be applied many times to iteratively refine an image from random noise. While many recent works propose techniques to reduce the number of required steps, they generally treat the underlying denoising network as a black box. In this work, we investigate the behavior of the layers within the network and find that 1) the layers' output changes smoothly over time, 2) the layers show distinct patterns of change, and 3) the change from step to step is often very small. We hypothesize that many layer computations in the denoising network are redundant. Leveraging this, we introduce block caching, in which we reuse outputs from layer blocks of previous steps to speed up inference. Furthermore, we propose a technique to automatically determine caching schedules based on each block's changes over timesteps. In our experiments, we show through FID, human evaluation and qualitative analysis that Block Caching allows to generate images with higher visual quality at the same computational cost. We demonstrate this for different state-of-the-art models (LDM and EMU) and solvers (DDIM and DPM).
+
+### S4C: Self-Supervised Semantic Scene Completion with Neural Fields (3DV 2024)
+
+[Project Page](https://ahayler.github.io/publications/s4c/) | [Paper](https://arxiv.org/abs/2310.07522)
+
+Our proposed method can reconstruct a scene from a single image and only relies on videos and pseudo segmentation ground truth generated from off-the-shelf image segmentation network during training. Unlike existing methods, which use discrete voxel grids, we represent scenes as implicit semantic fields. This formulation allows querying any point within the camera frustum for occupancy and semantic class. Our architecture is trained through rendering-based self-supervised losses. Nonetheless, our method achieves performance close to fully supervised state-of-the-art methods. Additionally, our method demonstrates strong generalization capabilities and can synthesize accurate segmentation maps for far away viewpoints.
+
+
+### Behind the Scenes: Density Fields for Single View Reconstruction (CVPR 2023)
 
 [Project Page](https://fwmb.github.io/bts/) | [Paper](https://arxiv.org/abs/2301.07668)
 
