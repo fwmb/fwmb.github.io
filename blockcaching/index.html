@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description"
+    content="Project page for the paper: Cache Me if You Can: Accelerating Diffusion Models through Block Caching">
+  <meta property="og:title" content="Cache Me if You Can: Accelerating Diffusion Models through Block Caching" />
+  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG" />
+  <meta property="og:url" content="fwmb.github.io/blockcaching" />
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+
+  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
+  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="diffusion paper arxiv image generation ai efficiency image generation">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>Cache Me if You Can: Accelerating Diffusion Models through Block Caching</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/slider-component.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script defer src="static/js/slider-component.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">♻️ Cache Me if You Can: Accelerating Diffusion Models through Block
+              Caching</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                <a href="https://fwmb.github.io" target="_blank">Felix Wimbauer</a><sup>1,2,3</sup>,
+              </span>
+
+              <span class="author-block">
+                <a href="https://www.linkedin.com/in/bichenwu/" target="_blank">Bichen Wu</a><sup>1</sup>,
+              </span>
+
+              <span class="author-block">
+                <a href="https://edgarschnfld.github.io/" target="_blank">Edgar Schoenfeld</a><sup>1</sup>,
+              </span>
+
+              <span class="author-block">
+                <a href="https://sites.google.com/view/xiaoliangdai/" target="_blank">Xiaoliang Dai</a><sup>1</sup>,
+              </span>
+
+              <span class="author-block">
+                <a href="https://sekunde.github.io/" target="_blank">Ji Hou</a><sup>1</sup>,
+              </span>
+
+              <span class="author-block">
+                <a href="https://www.linkedin.com/in/zijian-he-06727176/" target="_blank">Zijian He</a><sup>1</sup>,
+              </span>
+
+              <span class="author-block">
+                <a href="https://gdude.de/" target="_blank">Artsiom Sanakoyeu</a><sup>1</sup>,
+              </span>
+
+              <span class="author-block">
+                <a href="https://www.linkedin.com/in/peizhao-zhang-14846042/" target="_blank">Peizhao
+                  Zhang</a><sup>1</sup>,
+              </span>
+
+              <span class="author-block">
+                <a href="https://www.linkedin.com/in/sstsai/" target="_blank">Sam Tsai</a><sup>1</sup>,
+              </span>
+
+              <span class="author-block">
+                <a href="https://www.linkedin.com/in/jonasmoritzkohler" target="_blank">Jonas Kohler</a><sup>1</sup>,
+              </span>
+
+              <span class="author-block">
+                <a href="https://chrirupp.github.io/" target="_blank">Christian Rupprecht</a><sup>4</sup>,
+              </span>
+
+              <span class="author-block">
+                <a href="https://cvg.cit.tum.de/members/cremers" target="_blank">Daniel Cremers</a><sup>2,3</sup>,
+              </span>
+
+              <span class="author-block">
+                <a href="https://sites.google.com/site/vajdap" target="_blank">Peter Vajda</a><sup>1</sup>,
+              </span>
+
+              <span class="author-block">
+                <a href="https://sites.google.com/view/jialiangwang/home" target="_blank">Jialiang Wang</a><sup>1</sup>
+              </span>
+            </div>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>Meta GenAI, </span>
+              <span class="author-block"><sup>2</sup>Technical University of Munich, </span>
+              <span class="author-block"><sup>3</sup>MCML, </span>
+              <span class="author-block"><sup>4</sup>University of Oxford</span>
+
+              <span class="eql-cntrb"><small><br>Work done during Felix' internship at Meta GenAI</small></span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- Arxiv PDF link 
+                      <span class="link-block">
+                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Paper</span>
+                      </a>
+                    </span>-->
+
+                <!-- Supplementary PDF link 
+                    <span class="link-block">
+                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>Supplementary</span>
+                    </a>
+                  </span>-->
+
+                <!-- ArXiv abstract Link -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2312.03209" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+
+                <span class="link-block">
+                  <a href="#" target="_self" class="external-link button is-normal is-rounded is-dark"
+                    style="background-color: gray;">
+                    <span class="icon">
+                      <svg class="svg-inline--fa fa-youtube fa-w-18" aria-hidden="true" focusable="false"
+                        data-prefix="fab" data-icon="youtube" role="img" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 576 512" data-fa-i2svg="">
+                        <path fill="currentColor"
+                          d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z">
+                        </path>
+                      </svg><!-- <i class="fab fa-youtube"></i> Font Awesome fontawesome.com -->
+                    </span>
+                    <span>Video</span>
+                  </a>
+                </span>
+
+                <!-- Github link -->
+                <span class="link-block">
+                  <a href="#" target="_self" class="external-link button is-normal is-rounded is-dark"
+                    style="background-color: gray;">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Teaser -->
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <!-- <video poster="" id="tree" autoplay controls muted loop height="100%">
+        <source src="static/videos/banner_video.mp4"
+        type="video/mp4">
+      </video> -->
+
+        <img src="static/images/teaser.png" alt="Teaser image" />
+        <p class="content has-text-justified">
+          <b>Speeding up diffusion models through block caching.</b> We observe that there are many redundant layer
+          computations at
+          different timesteps in diffusion models when generating an image. Our block caching technique allows us to
+          avoid these unnecessary
+          computations, therefore speeding up inference by a factor of 1.5x-1.8x while maintaining image quality.
+          Compared to the standard practice
+          of naively reducing the number of denoising steps to match our inference speed, our approach produces more
+          detailed and vibrant results.
+        </p>
+      </div>
+    </div>
+  </section>
+  <!-- End teaser video -->
+
+  <!-- Paper abstract -->
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Diffusion models have recently revolutionized the field of image synthesis due to their ability to
+              generate photorealistic images.
+              However, one of the major drawbacks of diffusion models is that the image generation process is costly.
+              A large image-to-image network has to be applied many times to iteratively refine an image from random
+              noise.
+              While many recent works propose techniques to reduce the number of required steps, they generally treat
+              the underlying denoising network as a black box.
+              In this work, we investigate the behavior of the layers <i>within</i> the network and find that
+              1) the layers' output changes smoothly over time,
+              2) the layers show distinct patterns of change, and
+              3) the change from step to step is often very small.
+              We hypothesize that many layer computations in the denoising network are redundant.
+              Leveraging this, we introduce block caching, in which we reuse outputs from layer blocks of previous steps
+              to speed up inference.
+              Furthermore, we propose a technique to automatically determine caching schedules based on each block's
+              changes over timesteps.
+              In our experiments, we show through FID, human evaluation and qualitative analysis that Block Caching
+              allows to generate images with higher visual quality at the same computational cost.
+              We demonstrate this for different state-of-the-art models (LDM and EMU) and solvers (DDIM and DPM).
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End paper abstract -->
+
+  <!-- Method section -->
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3 has-text-left">Method</h2>
+            <h3 class="title is-4 has-text-left">Analysis</h3>
+            <p class="content has-text-justified">
+              <img width="100%" src="static/images/method.png" />
+              <br><br>
+              We observe, that in diffusion models, not only the intermediate results x, but also the internal feature
+              maps change
+              smoothly over time. (a) We visualize output feature maps of two layer blocks within the denoising network
+              via PCA. Structures change
+              smoothly at different rates. (b) We also observe this smooth layer-wise change when plotting the change in
+              output from one step to the
+              next, averaging over many different prompts and randomly initialized noise. Besides the average, we also
+              show the standard deviation as
+              shaded area. The patterns always remain the same. <i>(Configuration: LDM-512, DPM, 20 Steps.)</i>
+              <br>
+              <br>
+              We make <b>three key observations</b>:
+            <ol class="content has-text-justified">
+              <li>
+                <b>Smooth change over time.</b>
+                Similarly to the intermediate images during denoising, the blocks change smoothly and gradually over
+                time.
+                This suggests that there is a clear temporal relation between the outputs of a block.
+              </li>
+              <li>
+                <b>Distinct patterns of change.</b>
+                The different blocks do not behave uniformly over time.
+                Rather, they apply a lot of change in certain periods of the denoising process, while they remain
+                inactive in others.
+                The standard deviation shows that this behavior is consistent over different images and random seeds.
+                Note that some blocks, for example the blocks at higher resolutions (either very early or very late in
+                the network) change most in the last 20%, while deeper blocks at lower resolutions change more in the
+                beginning.
+              </li>
+              <li>
+                <b>Small step-to-step difference.</b>
+                Almost every block has significant periods during the denoising process, in which its output only
+                changes very little.
+              </li>
+            </ol>
+            </p>
+            <h3 class="title is-4 has-text-left">Block Caching</h3>
+            <p class="content has-text-justified">
+              We hypothesize that a lot of layer blocks are performing redundant computations during steps where their
+              outputs change very little.
+              To reduce the amount of redundant computations and to speed up inference, we propose <b>Block Caching</b>.
+            </p>
+
+            <div class="columns is-mobile is-centered is-vcentered">
+              <div class="column is-one-quarter">
+                <img src="static/images/caching_schedule.png" />
+              </div>
+              <div class="column">
+                <h5 class="title is-6 has-text-left">Automatic Cache Schedule</h5>
+                <p class="content has-text-justified">
+                  Not every block should be cached all the time.
+                  To make a more informed decision about when and where to cache, we rely on the change metrics
+                  visualized above.
+                  Our intuition is that for any layer block <i>i</i>, we retain a cached value, which was computed at
+                  time step <i>t<sub>a</sub></i> , as long as the accumulated change does not exceed a certain threshold
+                  δ. Once the threshold is
+                  exceeded at time step <i>t<sub>b</sub></i> , we recompute the block’s output.
+              </div>
+            </div>
+
+            <div class="columns is-mobile is-centered is-vcentered">
+              <div class="column is-one-quarter">
+                <img src="static/images/scale-shift_optimization.png" />
+              </div>
+              <div class="column">
+                <h5 class="title is-6 has-text-left">Scale Shift Adjustment</h5>
+                <p class="content has-text-justified">
+                  To enable the model to adjust to using cached values, we introduce a very lightweight <b>scale-shift
+                    adjustment mechanism</b> wherever we apply caching.
+                  To this end, we add a timestep-dependent scalar shift and scale parameter for each layer that receives
+                  a cached input.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3 has-text-left">Results</h2>
+            <h3 class="title is-4 has-text-left">EMU + Caching</h3>
+            <p class="content has-text-justified">
+              Given a fixed computational budget, we can perform more denoising steps and obtain higher-quality results.
+              Here, we compare <a
+                href="https://ai.meta.com/research/publications/emu-enhancing-image-generation-models-using-photogenic-needles-in-a-haystack/"
+                target="_blank">EMU</a> with our caching approach at 20 steps vs. 14 steps with the default setup.
+                With identical inference speed, our caching technique produces finer details and more vibrant colors.
+            </p>
+
+            <div class="columns is-mobile is-centered">
+              <div class="column is-one-third">
+                <img-comparison-slider hover="hover">
+                  <figure slot="first" class="before">
+                    <img width="100%" src="static/images/qualitative_results/emu/magical_poral_caching_ss.png" />
+                    <figcaption>Ours</figcaption>
+                  </figure>
+                  <figure slot="second" class="after">
+                    <img width="100%" src="static/images/qualitative_results/emu/magical_poral_baseline_14.png" />
+                    <figcaption>Baseline</figcaption>
+                  </figure>
+                </img-comparison-slider>
+                <p class="content has-text-centered"><i>
+                    A magical portal opening to reveal a hidden realm of wonders.
+                  </i></p>
+              </div>
+
+              <div class="column is-one-third">
+                <img-comparison-slider hover="hover">
+                  <figure slot="first" class="before">
+                    <img width="100%" src="static/images/qualitative_results/emu/tranquil_garden_caching_ss_20.png" />
+                    <figcaption>Ours</figcaption>
+                  </figure>
+                  <figure slot="second" class="after">
+                    <img width="100%" src="static/images/qualitative_results/emu/tranquil_garden_baseline_14.png" />
+                    <figcaption>Baseline</figcaption>
+                  </figure>
+                </img-comparison-slider>
+                <p class="content has-text-centered"><i>
+                    A tranquil garden with cherry blossoms in full bloom under a full moon.
+                  </i></p>
+              </div>
+
+              <div class="column is-one-third">
+                <img-comparison-slider hover="hover">
+                  <figure slot="first" class="before">
+                    <img width="100%" src="static/images/qualitative_results/emu/ancient_castle_caching_ss_20.png" />
+                    <figcaption>Ours</figcaption>
+                  </figure>
+                  <figure slot="second" class="after">
+                    <img width="100%" src="static/images/qualitative_results/emu/ancient_castle_baseline_14.png" />
+                    <figcaption>Baseline</figcaption>
+                  </figure>
+                </img-comparison-slider>
+                <p class="content has-text-centered"><i>
+                    An ancient castle on a cliff overlooking a vast, mist-covered valley.
+                  </i></p>
+              </div>
+            </div>
+
+            <div class="columns is-mobile is-centered">
+
+              <div class="column is-one-third">
+                <img-comparison-slider hover="hover">
+                  <figure slot="first" class="before">
+                    <img width="100%" src="static/images/qualitative_results/emu/tiger_caching_ss_20.png" />
+                    <figcaption>Ours</figcaption>
+                  </figure>
+                  <figure slot="second" class="after">
+                    <img width="100%" src="static/images/qualitative_results/emu/tiger_baseline_14.png" />
+                    <figcaption>Baseline</figcaption>
+                  </figure>
+                </img-comparison-slider>
+                <p class="content has-text-centered"><i>
+                    A yellow tiger with blue stripes.
+                  </i></p>
+              </div>
+
+              <div class="column is-one-third">
+                <img-comparison-slider hover="hover">
+                  <figure slot="first" class="before">
+                    <img width="100%" src="static/images/qualitative_results/emu/wizard_caching_ss_20.png" />
+                    <figcaption>Ours</figcaption>
+                  </figure>
+                  <figure slot="second" class="after">
+                    <img width="100%" src="static/images/qualitative_results/emu/wizard_baseline_14.png" />
+                    <figcaption>Baseline</figcaption>
+                  </figure>
+                </img-comparison-slider>
+                <p class="content has-text-centered"><i>
+                    A time-traveling wizard riding a mechanical steed through a portal, leaving trails of stardust in
+                    their wake. </i></p>
+              </div>
+
+              <div class="column is-one-third">
+                <img-comparison-slider hover="hover">
+                  <figure slot="first" class="before">
+                    <img width="100%" src="static/images/qualitative_results/emu/floating_city_caching_ss_20.png" />
+                    <figcaption>Ours</figcaption>
+                  </figure>
+                  <figure slot="second" class="after">
+                    <img width="100%" src="static/images/qualitative_results/emu/floating_city_baseline_14.png" />
+                    <figcaption>Baseline</figcaption>
+                  </figure>
+                </img-comparison-slider>
+                <p class="content has-text-centered"><i>
+                    A floating city in the clouds where airships navigate through tunnels of light, and majestic
+                    creatures soar in the skies. </i></p>
+              </div>
+            </div>
+            <h3 class="title is-5 has-text-left">Quantitative Results</h3>
+            <p class="content has-text-justified">
+              We conduct a human evaluation study on the visual appeal of images generated with either the configuration with caching or the baseline without caching.
+              We always compare configurations that have the same latency. 
+            </p>
+            <img width="50%" src="static/images/quantitative_results/emu_quantitative_results.png" />
+            <br><br><br>
+
+
+            <h3 class="title is-4 has-text-left">Qualitative Comparison LDM</h3>
+            <p class="content has-text-justified">
+              We show different configurations for the common LDM architecture. The caching configurations at 20 steps and the baseline configuration at 14 steps have the same latency.
+              The baseline with 20 steps is about 1.5x slower.
+              Our method often provides richer colors and finer details. Through our scale-shift adjustment, we avoid artifacts that are visible when naively applying block caching.
+            </p>
+            <img width="100%" src="static/images/qualitative_results/ldm_qualitative_results.png" />
+            <br><br>
+
+            <h3 class="title is-5 has-text-left">Quantitative Results</h3>
+            <p class="content has-text-justified">
+              For different solvers, we test our caching technique against baselines with 1) the same number of steps or 2) the same latency. 
+              In all cases, our proposed approach achieves significant speedup while improving visual quality as measured by FID on a COCO subset removing all faces (for privacy reasons). 
+              Legend: SS = Scale-shift adjustment, Img/s. = Images per second. 
+            </p>
+            <img width="50%" src="static/images/quantitative_results/ldm_quantitative_results.png" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End youtube video -->
+
+
+  <!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@article{wimbauer2023cache,
+  title={Cache Me if You Can: Accelerating Diffusion Models through Block Caching},
+  author={Wimbauer, Felix and Wu, Bichen and Schoenfeld, Edgar and Dai, Xiaoliang and Hou, Ji and He, Zijian and Sanakoyeu, Artsiom and Zhang, Peizhao and Tsai, Sam and Kohler, Jonas and others},
+  journal={arXiv preprint arXiv:2312.03209},
+  year={2023}
+}</code></pre>
+    </div>
+  </section>
+  <!--End BibTex citation -->
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+
+            <p>
+              This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template"
+                target="_blank">Academic Project Page Template</a> which was adopted from the <a
+                href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Statcounter tracking code -->
+
+  <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+  <!-- End of Statcounter Code -->
+
+</body>
+
+</html>
