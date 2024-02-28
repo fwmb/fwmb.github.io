@@ -81,14 +81,12 @@
                             <tr>
                                 <td style="padding:20px;width:100%;vertical-align:middle">
                                     <h2>Updates</h2>
-
                                     <p>
-                                        <b>December 2023</b> The result of my internship <a
-                                            href="https://fwmb.github.io/blockcaching">Cache Me if You Can</a> is out on
-                                        <b>ArXiv</b>.
+                                        <b>February 2024</b> <a href="https://fwmb.github.io/blockcaching">Cache Me if You Can</a>, alongside <a href="https://jonasschult.github.io/ControlRoom3D/">ControlRoom3D</a> and <b>Multiview Behind the Scenes</b> were accepted at <b>CVPR 2024</b>.
                                     </p>
                                     <p>
-                                        <b>December 2023</b> I completed my internship at <b>Meta</b>.
+                                        <b>December 2023</b> I completed my internship at <b>Meta</b> and the resulting paper <a
+                                            href="https://fwmb.github.io/blockcaching">Cache Me if You Can</a> is out on <b>ArXiv</b>.
                                     </p>
                                     <p>
                                         <b>October 2023</b> Our work <a
@@ -209,7 +207,7 @@ Through this, I hope to enable more wide-spread applications of such methods, an
                                     <a href="https://sites.google.com/site/vajdap" target="_blank">Peter Vajda</a>,
                                     <a href="https://sites.google.com/view/jialiangwang/home" target="_blank">Jialiang Wang</a>
                                     <br>
-                                    <em>arXiv</em>, 2023
+                                    <b>CVPR</b>, 2024
                                     <br>
                                     <a href="https://fwmb.github.io/blockcaching/" target="_blank">project page</a>
                                     /
@@ -217,6 +215,59 @@ Through this, I hope to enable more wide-spread applications of such methods, an
                                     <p></p>
                                     <p>
                                         We reuse layer computations from previous timesteps to make image generation with diffusion models more efficient.
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr onmouseout="controlroom3d_stop()" onmouseover="controlroom3d_start()">
+                                <td style="padding:20px;width:25%;vertical-align:middle">
+                                    <div class="one">
+                                        <div class="two" id='controlroom3d_image'><video width=100% muted autoplay loop>
+                                                <source src="images/smerf.mp4" type="video/mp4">
+                                                Your browser does not support the video tag.
+                                            </video></div>
+                                        <img src='static/images/schult2024controlroom3d.png' width=100%>
+                                    </div>
+                                    <script type="text/javascript">
+                                        function caching_start() {
+                                            document.getElementById('controlroom3d_image').style.opacity = "1";
+                                        }
+
+                                        function caching_stop() {
+                                            document.getElementById('controlroom3d_image').style.opacity = "0";
+                                        }
+                                        caching_stop()
+                                    </script>
+                                </td>
+                                <td style="padding:20px;width:75%;vertical-align:top">
+                                    <a href="https://jonasschult.github.io/ControlRoom3D/">
+                                        <span class="papertitle">ControlRoom3D: Room Generation using Semantic Proxy Rooms</span>
+                                    </a>
+                                    <br>
+                                    <a href="https://jonasschult.github.io/" target="_blank">Jonas Schult</a>,
+                                    <a href="https://www.linkedin.com/in/sstsai/" target="_blank">Sam Tsai</a>,
+                                    <a href="https://niessnerlab.org/members/lukas_hoellein/profile.html" target="_blank">Lukas Höllein</a>,
+                                    <a href="https://www.linkedin.com/in/bichenwu/" target="_blank">Bichen Wu</a>,
+                                    <a href="https://sites.google.com/view/jialiangwang/home" target="_blank">Jialiang Wang</a>,
+                                    <a href="https://chihyaoma.github.io/" target="_blank">Chih-Yao Ma</a>
+                                    <a href="https://kunpengli1994.github.io/" target="_blank">Kunpeng Li</a>,
+                                    <a href="https://minione.github.io/" target="_blank">Xiaofang Wang</a>,
+                                    <strong>Felix Wimbauer</strong>,
+                                    <a href="https://www.linkedin.com/in/zijian-he-06727176/" target="_blank">Zijian He</a>,
+                                    <a href="https://www.linkedin.com/in/peizhao-zhang-14846042/" target="_blank">Peizhao Zhang</a>,
+                                    <a href="https://www.vision.rwth-aachen.de/person/1/" target="_blank">Bastian Leibe</a>,
+                                    <a href="https://sites.google.com/site/vajdap" target="_blank">Peter Vajda</a>,
+                                    <a href="https://sekunde.github.io/" target="_blank">Ji Hou</a>,
+                                    <br>
+                                    <b>CVPR</b>, 2024
+                                    <br>
+                                    <a href="https://jonasschult.github.io/ControlRoom3D/" target="_blank">project page</a>
+                                    /
+                                    <a href="https://arxiv.org/abs/2312.05208" target="_blank">arXiv</a>
+                                    /
+                                    <a href="https://omnomnom.vision.rwth-aachen.de/data/controlroom3d/controlroom3d_long_video.mp4" target="_blank">video</a>
+                                    <p></p>
+                                    <p>
+                                        ControlRoom3D creates diverse and plausible 3D room meshes aligning well with user-defined room layouts and textual descriptions of the room style.
                                     </p>
                                 </td>
                             </tr>
