@@ -218,6 +218,45 @@ Through this, I hope to enable more wide-spread applications of such methods, an
                                     </p>
                                 </td>
                             </tr>
+                            <tr onmouseout="mvbts_stop()" onmouseover="mvbts_start()">
+                                <td style="padding:20px;width:25%;vertical-align:middle">
+                                    <div class="one">
+                                        <div class="two" id='mvbts_image'><video width=100% muted autoplay loop>
+                                                <source src="images/smerf.mp4" type="video/mp4">
+                                                Your browser does not support the video tag.
+                                            </video></div>
+                                        <img src='static/images/han2024mvbts.png' width=100%>
+                                    </div>
+                                    <script type="text/javascript">
+                                        function caching_start() {
+                                            document.getElementById('mvbts_image').style.opacity = "1";
+                                        }
+
+                                        function caching_stop() {
+                                            document.getElementById('mvbts_image').style.opacity = "0";
+                                        }
+                                        caching_stop()
+                                    </script>
+                                </td>
+                                <td style="padding:20px;width:75%;vertical-align:top">
+                                    <a href="#">
+                                        <span class="papertitle">Boosting Self-Supervision for Single-View Scene Completion via Knowledge Distillation</span>
+                                    </a>
+                                    <br>
+                                    <a href="https://www.linkedin.com/in/keonhee-han-471895145" target="_blank">Keonhee Han</a>*,
+                                    <a href="https://vision.in.tum.de/members/muhled" target="_blank">Dominik Muhle</a>*,
+                                    <strong>Felix Wimbauer</strong>,
+                                    <a href="https://cvg.cit.tum.de/members/cremers" target="_blank">Daniel Cremers</a>,
+                                    <br>
+                                    <b>CVPR</b>, 2024
+                                    <br>
+                                    <a href="#" target="_blank">arXiv (coming soon)</a>
+                                    <p></p>
+                                    <p>
+                                        Leveraging multi-view supervision and distillation training to improve volumetric reconstruction from a single image.
+                                    </p>
+                                </td>
+                            </tr>
                             <tr onmouseout="controlroom3d_stop()" onmouseover="controlroom3d_start()">
                                 <td style="padding:20px;width:25%;vertical-align:middle">
                                     <div class="one">
