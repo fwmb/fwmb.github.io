@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description"
+    content="Project page for the paper: Cache Me if You Can: Accelerating Diffusion Models through Block Caching">
+  <meta property="og:title" content="Cache Me if You Can: Accelerating Diffusion Models through Block Caching" />
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="en_US" />
+  <link rel="canonical" href="https://fwmb.github.io/blockcaching/" />
+  <meta property="og:url" content="https://fwmb.github.io/blockcaching/" />
+  <meta property="og:site_name" content="fwmb.github.io" />
+  <meta property="og:type" content="website" />
+
+
+  <meta name="twitter:title" content="AnyCam: Learning to Recover Camera Poses and Intrinsics from Casual Videos">
+  <meta name="twitter:description" content="Project page for the paper: AnyCam: Learning to Recover Camera Poses and Intrinsics from Casual Videos">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="diffusion paper arxiv image generation ai efficiency image generation">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>AnyCam: Learning to Recover Camera Poses and Intrinsics from Casual Videos</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/slider-component.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script defer src="static/js/slider-component.js"></script>
+  <script src="static/js/index.js"></script>
+
+  <meta name="google-site-verification" content="zw9u6_jt4sZrVXoW4vzvZ4AjLoTAMOIUe5u6H_n5edE" />  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QQMNN9GSPS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-QQMNN9GSPS');
+  </script>
+
+  <style>
+    .iframe-placeholder {
+        width: 100%;
+        height: 500px; /* Adjust as needed */
+        background: #f3f3f3 url('https://via.placeholder.com/800x400?text=Click+to+Load') center/cover no-repeat;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        font-weight: bold;
+        color: #555;
+        cursor: pointer;
+        border: 1px solid #ccc;
+    }
+    .iframe-container {
+        width: 100%;
+        height: 500px; /* Ensure the height is fixed */
+    }
+  </style>
+  <script>
+    function generateRerunHTML(rerunName, videoFile, rerunFile1, rerunFile2, caption) {
+      const html = `
+      <h5 class="title is-6 has-text-centered" style="margin-bottom: 5px;">
+        ${caption}
+      </h5>
+      <video width="100%" loop style="margin-top: 5px;" onmouseover="this.controls = true" onmouseout="this.controls = false">
+      <source src="${videoFile}" type="video/mp4">
+      Your browser does not support the video tag.
+      </video>
+      
+      <div style="text-align: center; display: flex; align-items: center; justify-content: center;">
+        Visualize in 3D:&nbsp;&nbsp;&nbsp;
+        <div class="buttons are-small" style="display: inline-block;">
+          <a href="https://app.rerun.io/version/0.22.1/?url=${rerunFile1}&url=https://cvg.cit.tum.de/webshare/g/behindthescenes/anycam/blueprint.rbl&hide_welcome_screen=true&allow_fullscreen=true" target="_blank" class="button is-light is-info">
+        <span class="icon">
+          <img src="static/images/rerun_icon_dark.png" alt="icon" style="width: 20px; height: 20px;">
+        </span>
+        <span>4D Reconstruction</span>
+          </a>
+          <a href="https://app.rerun.io/version/0.22.1/?url=${rerunFile2}&url=https://cvg.cit.tum.de/webshare/g/behindthescenes/anycam/blueprint_refinement.rbl&hide_welcome_screen=true&allow_fullscreen=true" target="_blank" class="button is-light is-info">
+        <span class="icon">
+          <img src="static/images/rerun_icon_dark.png" alt="icon" style="width: 20px; height: 20px;">
+        </span>
+        <span>Refinement</span>
+          </a>
+        </div>
+      </div>
+      `;
+      return html;
+    }
+
+    function initializeRerunViewer(videoFile, rerunFile1, rerunFile2, caption, containerId) {
+      const container = document.getElementById(containerId);
+
+      const rerunName = rerunFile1.split('/').pop().split('.')[0];
+
+      container.innerHTML = generateRerunHTML(rerunName, videoFile, rerunFile1, rerunFile2, caption);
+    }
+
+    function insertHere(video, rerunFile1, rerunFile2, caption) {
+      const scriptTag = document.currentScript;
+      const parentElement = scriptTag.parentNode;
+      const containerId = parentElement.id;
+
+      console.log(`Insert here: ${video}, ${rerunFile1}, ${rerunFile2}, ${caption}, ${containerId}, ${parentElement}, ${scriptTag}`);
+
+      initializeRerunViewer(video, rerunFile1, rerunFile2, caption, containerId);
+    }
+  </script>
+</head>
+
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">🎥 AnyCam: Learning to Recover Camera Poses and Intrinsics from Casual Videos</h1>
+            <div class="is-size-4 publication-authors">
+              <span class="author-block">CVPR 2025</span>
+            </div>
+            <br>
+            <div class="is-size-4 publication-authors">
+              <span class="author-block">
+                <a href="https://fwmb.github.io/" target="_blank">Felix Wimbauer</a><sup>1,2,3</sup>,
+              </span>
+
+              <span class="author-block">
+                <a href="https://chiaki530.github.io/" target="_blank">Weirong Chen</a><sup>1,2,3</sup>,
+              </span>
+
+              <span class="author-block">
+                <a href="https://dominikmuhle.github.io/" target="_blank">Dominik Muhle</a><sup>1,2</sup>,
+              </span>
+
+              <span class="author-block">
+                <a href="https://chrirupp.github.io/" target="_blank">Christian Rupprecht</a><sup>3</sup>,
+              </span>
+
+              <span class="author-block">
+                <a href="https://cvg.cit.tum.de/members/cremers" target="_blank">Daniel Cremers</a><sup>1,2</sup>
+              </span>
+
+            </div>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>Technical University of Munich, </span>
+              <span class="author-block"><sup>2</sup>MCML, </span>
+              <span class="author-block"><sup>3</sup>University of Oxford</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- Arxiv PDF link 
+                      <span class="link-block">
+                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Paper</span>
+                      </a>
+                    </span>-->
+
+                <!-- Supplementary PDF link 
+                    <span class="link-block">
+                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>Supplementary</span>
+                    </a>
+                  </span>-->
+
+                <!-- ArXiv abstract Link -->
+                <span class="link-block">
+                  <a href="#" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+
+                <span class="link-block">
+                  <a href="#" target="_self" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <svg class="svg-inline--fa fa-youtube fa-w-18" aria-hidden="true" focusable="false"
+                        data-prefix="fab" data-icon="youtube" role="img" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 576 512" data-fa-i2svg="">
+                        <path fill="currentColor"
+                          d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z">
+                        </path>
+                      </svg><!-- <i class="fab fa-youtube"></i> Font Awesome fontawesome.com -->
+                    </span>
+                    <span>Video</span>
+                  </a>
+                </span>
+
+                <!-- Github link -->
+                <span class="link-block">
+                  <a href="#" target="_self" class="external-link button is-normal is-rounded is-dark"
+                    style="background-color: gray;">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Teaser -->
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <!-- <video poster="" id="tree" autoplay controls muted loop height="100%">
+        <source src="static/videos/banner_video.mp4"
+        type="video/mp4">
+      </video> -->
+
+        <img src="static/images/teaser.png" alt="Teaser image" />
+      </div>
+    </div>
+  </section>
+  <!-- End teaser video -->
+
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Overview</h2>
+          <div class="content has-text-justified">
+            <p class="content has-text-justified">
+              Traditional Structure-from-Motion (SfM) and SLAM methods struggle with arbitrary and dynamic video data, often requiring known camera intrinsics or expensive test-time optimization. 
+              Recent data-driven approaches like Dust3r show promise but lack robustness to dynamic objects and rely on labeled data. 
+              <b>AnyCam</b> is a fast transformer-based model that estimates camera motion and intrinsics in a <b>feed-forward manner</b>, leveraging priors from real-world camera movements. 
+              It trains on diverse, <b>unlabeled</b> YouTube videos using an <b>uncertainty-based loss</b> and pre-trained depth/flow networks instead of direct motion supervision. 
+              A lightweight <b>trajectory refinement step</b> prevents drift. AnyCam achieves <b>accurate and fast</b> performance on benchmarks and can generate high-quality 4D point clouds efficiently.
+            </p>
+
+  </section>
+
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns is-centered has-text-centered">
+          <div class="column">
+            <h2 class="title is-3 has-text-left">Results</h2>
+            <h3 class="title is-4 has-text-left">Davis</h3>
+            <div class="columns is-mobile is-centered is-multiline">
+              <div class="column is-half" id="rerun-container-1" style="min-width: 500px;">
+              <script>
+                insertHere(
+                  "static/videos/train-4d.mp4",
+                  "https://cvg.cit.tum.de/webshare/g/behindthescenes/anycam/davis/train-4d.rrd", 
+                  "https://cvg.cit.tum.de/webshare/g/behindthescenes/anycam/davis/train-refinement.rrd",
+                  "Train"
+                );
+              </script>
+              <!-- Dynamic content will be inserted here -->
+              </div>
+
+              <div class="column is-half" id="rerun-container-2" style="min-width: 500px;">
+              <script>
+                insertHere(
+                  "static/videos/breakdance-flare-4d.mp4",
+                  "https://cvg.cit.tum.de/webshare/g/behindthescenes/anycam/davis/breakdance-flare-4d.rrd", 
+                  "https://cvg.cit.tum.de/webshare/g/behindthescenes/anycam/davis/breakdance-flare-refinement.rrd",
+                  "Breakdance Flare"
+                );              </script>
+              <!-- Dynamic content will be inserted here -->
+              </div>
+
+              <div class="column is-half" id="rerun-container-3" style="min-width: 500px;">
+              <script>
+                insertHere(
+                  "static/videos/soapbox-4d.mp4",
+                  "https://cvg.cit.tum.de/webshare/g/behindthescenes/anycam/davis/soapbox-4d.rrd", 
+                  "https://cvg.cit.tum.de/webshare/g/behindthescenes/anycam/davis/soapbox-refinement.rrd",
+                  "Soapbox"
+                );                </script>
+              <!-- Dynamic content will be inserted here -->
+              </div>
+
+              <div class="column is-half" id="rerun-container-4" style="min-width: 500px;">
+              <script>
+                insertHere(
+                  "static/videos/lady-running-4d.mp4",
+                  "https://cvg.cit.tum.de/webshare/g/behindthescenes/anycam/davis/lady-running-4d.rrd", 
+                  "https://cvg.cit.tum.de/webshare/g/behindthescenes/anycam/davis/lady-running-refinement.rrd",
+                  "Lady Running"
+                );                
+              </script>
+              <!-- Dynamic content will be inserted here -->
+              </div>
+            </div>
+
+            <h3 class="title is-4 has-text-left">Waymo</h3>
+            <div class="columns is-mobile is-centered is-multiline">
+              <div class="column is-half" id="rerun-container-5" style="min-width: 500px;">
+              <script>
+                insertHere(
+                  "static/videos/waymo_515-575-4d.mp4",
+                  "https://cvg.cit.tum.de/webshare/g/behindthescenes/anycam/waymo/waymo_515-575-4d.rrd", 
+                  "https://cvg.cit.tum.de/webshare/g/behindthescenes/anycam/waymo/waymo_515-575-refinement.rrd",
+                  "Busy Street"
+                );
+              </script>
+              <!-- Dynamic content will be inserted here -->
+              </div>
+
+              <div class="column is-half" id="rerun-container-6" style="min-width: 500px;">
+              <script>
+                insertHere(
+                  "static/videos/waymo_1090-1152-4d.mp4",
+                  "https://cvg.cit.tum.de/webshare/g/behindthescenes/anycam/waymo/waymo_1090-1152-4d.rrd", 
+                  "https://cvg.cit.tum.de/webshare/g/behindthescenes/anycam/waymo/waymo_1090-1152-refinement.rrd",
+                  "Intersection"
+                );              
+                </script>
+              <!-- Dynamic content will be inserted here -->
+              </div>
+            </div>
+
+            <h3 class="title is-4 has-text-left">Project Aria</h3>
+            <div class="columns is-mobile is-centered is-multiline">
+              <div class="column is-half" id="rerun-container-7" style="min-width: 500px;">
+              <script>
+                insertHere(
+                  "static/videos/aria_loc1_script2_seq1_rec1_0_220-420-4d.mp4",
+                  "https://cvg.cit.tum.de/webshare/g/behindthescenes/anycam/aria/aria_loc1_script2_seq1_rec1_0_220-420-4d.rrd", 
+                  "https://cvg.cit.tum.de/webshare/g/behindthescenes/anycam/aria/aria_loc1_script2_seq1_rec1_0_220-420-refinement.rrd",
+                  "Door to living room"
+                );
+              </script>
+              <!-- Dynamic content will be inserted here -->
+              </div>
+
+              <div class="column is-half" id="rerun-container-8" style="min-width: 500px;">
+              <script>
+                insertHere(
+                  "static/videos/aria_loc1_script2_seq6_rec2_0_80-280-4d.mp4",
+                  "https://cvg.cit.tum.de/webshare/g/behindthescenes/anycam/aria/aria_loc1_script2_seq6_rec2_0_80-280-4d.rrd", 
+                  "https://cvg.cit.tum.de/webshare/g/behindthescenes/anycam/aria/aria_loc1_script2_seq6_rec2_0_80-280-refinement.rrd",
+                  "Kitchen cleanup"
+                );              
+                </script>
+              <!-- Dynamic content will be inserted here -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@inproceedings{wimbauer2025anycam,
+  title={AnyCam: Learning to Recover Camera Poses and Intrinsics from Casual Videos},
+  author={Wimbauer, Felix and Chen, Weirong and Muhle, Dominik and Rupprecht, Christian and Cremers, Daniel},
+  booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  year={2025}
+}</code></pre>
+    </div>
+  </section>
+  <!--End BibTex citation -->
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+
+            <p>
+              This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template"
+                target="_blank">Academic Project Page Template</a> which was adopted from the <a
+                href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Statcounter tracking code -->
+
+  <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+  <!-- End of Statcounter Code -->
+
+</body>
+
+</html>
