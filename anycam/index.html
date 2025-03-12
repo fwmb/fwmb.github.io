@@ -18,7 +18,6 @@
   <meta property="og:site_name" content="fwmb.github.io" />
   <meta property="og:type" content="website" />
 
-
   <meta name="twitter:title" content="AnyCam: Learning to Recover Camera Poses and Intrinsics from Casual Videos">
   <meta name="twitter:description" content="Project page for the paper: AnyCam: Learning to Recover Camera Poses and Intrinsics from Casual Videos">
   <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
@@ -245,12 +244,14 @@
   <section class="hero teaser">
     <div class="container is-max-desktop">
       <div class="hero-body">
-        <!-- <video poster="" id="tree" autoplay controls muted loop height="100%">
-        <source src="static/videos/banner_video.mp4"
-        type="video/mp4">
-      </video> -->
+        <video poster="" id="tree" autoplay muted loop height="100%">
+          <source src="static/videos/teaser_v2.mp4" type="video/mp4">
+        </video>
 
-        <img src="static/images/teaser.png" alt="Teaser image" />
+        <div style="text-align: center;">
+          <span style="color: red; font-weight: bold;">↓ For interactive results, please scroll down! ↓</span>
+        </div>
+        <!-- <img src="static/images/teaser.png" alt="Teaser image" /> -->
       </div>
     </div>
   </section>
@@ -269,8 +270,47 @@
               It trains on diverse, <b>unlabeled</b> YouTube videos using an <b>uncertainty-based loss</b> and pre-trained depth/flow networks instead of direct motion supervision. 
               A lightweight <b>trajectory refinement step</b> prevents drift. AnyCam achieves <b>accurate and fast</b> performance on benchmarks and can generate high-quality 4D point clouds efficiently.
             </p>
-
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
+
+  <section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <h2 class="title is-3 has-text-left">Method</h2>
+          <img src="static/images/method.png" alt="Method" style="width: 80%; height: auto;">
+          <p class="content has-text-justified">
+            AnyCam processes a sequence of frames from a casual video with corresponding depth maps and optical flow. 
+            A backbone extracts feature maps per image. Information sharing between frames is enabled by multiple attention layers that process the features of all sequence images. 
+            The transformer architecture outputs one pose token &phi;<sup>i &rarr; j</sup> per timestep and an additional sequence token &phi;<sup>seq</sup>. 
+            The pose tokens are processed using multiple intrinsic hypotheses f &isin; {f<sub>1</sub>, &hellip;, f<sub>m</sub>}, parametrized by frame prediction heads (&Hscr;<sup>P</sup><sub>f</sub>, &Hscr;<sup>&sigma;</sup><sub>f</sub>). 
+            The sequence head &Hscr;<sup>seq</sup> predicts the likelihood scores of the different hypotheses. 
+            The model is trained end-to-end via a reprojection loss, a pose consistency loss between forward and backward pose predictions, and a KL-divergence loss.
+            At inference time, we apply a test-time refinement based on bundle adjustment.
+          </p>
+
+          <h2 class="title is-3 has-text-left">Data</h2>
+          <div style="display: flex; align-items: center;">
+            <img src="static/images/datamix.png" alt="Data" style="width: 30%; height: auto; margin-right: 20px;">
+            <p class="content has-text-justified">
+              Our training formulation requires no labeled data and is robust towards dynamic objects and suboptimal image quality.
+              This is a key benefit of our method, as dynamic videos with 3D labels are scarce.
+              To highlight this strength, we rely on a diverse mix of datasets based on YouTube or individual GoPro capture, as shown in the table.
+              None of the datasets has ground truth 3D labels (note for some, Colmap was later applied to obtain proxy labels, but we do not use them).
+              Following existing works on pose estimation in dynamic environments, we perform evaluation on the Sintel and the dynamic subset of TUM-RGBD.
+              Furthermore, we test AnyCam qualitatively on three other datasets: Davis (diverse videos from YouTube), Waymo (autonomous driving), and Aria Everyday Activities.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
   <section class="hero is-small">
     <div class="hero-body">
