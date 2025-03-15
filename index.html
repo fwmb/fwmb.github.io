@@ -170,7 +170,51 @@ Through this, I hope to enable more wide-spread applications of such methods, an
                     <table
                         style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
                         <tbody>
-                            <tr onmouseout="caching_stop()" onmouseover="caching_start()">
+                            <tr onmouseout="anycam_stop()" onmouseover="anycam_start()">
+                                <td style="padding:20px;width:25%;vertical-align:middle">
+                                    <div class="one">
+                                        <div class="two" id='anycam_image'><video width=100% muted autoplay loop>
+                                                <source src="images/smerf.mp4" type="video/mp4">
+                                                Your browser does not support the video tag.
+                                            </video></div>
+                                        <img src='static/images/wimbauer2025anycam.png' width=100%>
+                                    </div>
+                                    <script type="text/javascript">
+                                        function anycam_start() {
+                                            document.getElementById('anycam_image').style.opacity = "1";
+                                        }
+
+                                        function anycam_stop() {
+                                            document.getElementById('anycam_image').style.opacity = "0";
+                                        }
+                                        anycam_stop()
+                                    </script>
+                                </td>
+                                <td style="padding:20px;width:75%;vertical-align:top">
+                                <a href="https://fwmb.github.io/anycam/">
+                                    <span class="papertitle">AnyCam: Learning to Recover Camera Poses and Intrinsics from Casual Videos</span>
+                                </a>
+                                <br>
+                                <strong>Felix Wimbauer</strong>,
+                                <a href="https://chiaki530.github.io/" target="_blank">Weirong Chen</a>
+                                <a href="https://dominikmuhle.github.io/" target="_blank">Dominik Muhle</a>,
+                                <a href="https://chrirupp.github.io/" target="_blank">Christian Rupprecht</a>,
+                                <a href="https://cvg.cit.tum.de/members/cremers" target="_blank">Daniel Cremers</a>
+                                <br>
+                                <b>CVPR</b>, 2023
+                                <br>
+                                <a href="https://fwmb.github.io/anycam/" target="_blank">project page</a>
+                                /
+                                <a href="https://fwmb.github.io/anycam/static/wimbauer2025anycam.pdf" target="_blank">paper</a>
+                                /
+                                <a href="https://github.com/Brummi/anycam" target="_blank">code</a>
+                                <p></p>
+                                <p>
+                                    A method for learning camera poses and intrinsics from dynamic casual videos.
+                                </p>
+                            </td>
+                            </tr>
+                            <tr onmouseout="anycam_stop()" onmouseover="anycam_start()">
                                 <td style="padding:20px;width:25%;vertical-align:middle">
                                     <div class="one">
                                         <div class="two" id='caching_image'><video width=100% muted autoplay loop>
