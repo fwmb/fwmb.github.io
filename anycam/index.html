@@ -77,6 +77,16 @@
         height: 500px; /* Ensure the height is fixed */
     }
   </style>
+  <style>
+    .rainbow-text {
+      background: linear-gradient(to right, red, orange, #FFD700, green, blue, indigo, violet);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: bold;
+      font-style: italic;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    }
+  </style>
   <script>
     function generateRerunHTML(rerunName, videoFile, rerunFile1, rerunFile2, caption) {
       const html = `
@@ -89,7 +99,7 @@
       </video>
       
       <div style="text-align: center; display: flex; align-items: center; justify-content: center;">
-        Visualize in 3D:&nbsp;&nbsp;&nbsp;
+        <span class="rainbow-text">Visualize in 3D:&nbsp;&nbsp;&nbsp;</span>
         <div class="buttons are-small" style="display: inline-block;">
           <a href="https://app.rerun.io/version/0.22.1/?url=${rerunFile1}&url=https://cvg.cit.tum.de/webshare/g/behindthescenes/anycam/blueprint.rbl&hide_welcome_screen=true&allow_fullscreen=true" target="_blank" class="button is-light is-info">
         <span class="icon">
