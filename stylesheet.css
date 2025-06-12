@@ -142,6 +142,7 @@
     display: flex;
     flex-direction: column;
     gap: 0;
+
   }
   
   .pub-row {
@@ -150,7 +151,6 @@
     width: 100%;
     border: none;
     margin: 10px 0; /* Add vertical margin between entries */
-    padding: 0;
     align-items: stretch;
   }
   
@@ -173,21 +173,28 @@
   }
   
   @media (max-width: 700px) {
+    .pub-list {
+      width: auto;
+      max-width: 100%;
+      margin: 0 10px;
+    }
+
     .pub-row {
       flex-direction: column;
       margin-top: 0px;
-      margin-bottom: px;
+      margin-bottom: 0px;
+      padding: 0;
     }
+
     .pub-img-col, .pub-info-col {
       flex: unset;
       width: 100%;
       max-width: 100%;
-      padding: 10px;
+      padding: 10px 0;
     }
 
     .one, .two {
       max-width: 200px;
-      width: auto;
       height: auto;
       margin-left: auto;
       margin-right: auto;
