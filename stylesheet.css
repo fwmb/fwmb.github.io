@@ -111,13 +111,13 @@
   
   .one {
     width: 160px;
-    height: 160px;
+    /* height: 160px; */
     position: relative;
   }
   
   .two {
     width: 160px;
-    height: 160px;
+    /* height: 160px; */
     position: absolute;
     transition: opacity .2s ease-in-out;
     -moz-transition: opacity .2s ease-in-out;
@@ -132,4 +132,70 @@
   
   span.highlight {
     background-color: #ffffd0;
+  }
+
+  /* Publication list layout */
+  .pub-list {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  
+  .pub-row {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    border: none;
+    margin: 10px 0; /* Add vertical margin between entries */
+    padding: 0;
+    align-items: stretch;
+  }
+  
+  .pub-img-col {
+    flex: 0 0 25%;
+    padding: 5px;
+    vertical-align: top;
+    display: flex;
+    align-items: top;
+    justify-content: top;
+  }
+  
+  .pub-info-col {
+    flex: 1 1 75%;
+    padding: 5px;
+    vertical-align: top;
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+  }
+  
+  @media (max-width: 700px) {
+    .pub-row {
+      flex-direction: column;
+      margin-top: 0px;
+      margin-bottom: px;
+    }
+    .pub-img-col, .pub-info-col {
+      flex: unset;
+      width: 100%;
+      max-width: 100%;
+      padding: 10px;
+    }
+
+    .one, .two {
+      max-width: 200px;
+      width: auto;
+      height: auto;
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+    }
+  }
+
+  .pub-links {
+    display: inline;
+    /* Optional: add spacing between links */
   }
