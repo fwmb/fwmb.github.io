@@ -82,7 +82,10 @@
                                 <td style="padding:20px;width:100%;vertical-align:middle">
                                     <h2>Updates</h2>
                                     <p>
-                                        <b>June 2025</b> Three papers, <a href="https://wrchen530.github.io/projects/batrack/">Back-on-Track</a>, <a href="#">Dream-to-Real</a>, and <a href="#">SceneDINO</a>, were accepted at <b>ICCV 2025</b>.
+                                        <b>June 2025</b> I started a <b>Student Researcher</b> position in Federico Tombari's group at <b>Google Zurich</b> on generative 3D.
+                                    </p>
+                                    <p>
+                                        <b>June 2025</b> Three papers, <a href="https://wrchen530.github.io/projects/batrack/">Back-on-Track</a>, <a href="https://philippwulff.github.io/dream-to-recon/">Dream-to-Recon</a>, and <a href="https://visinf.github.io/scenedino/">SceneDINO</a>, were accepted at <b>ICCV 2025</b>.
                                     </p>
                                     <p>
                                         <b>February 2025</b> <a href="https://fwmb.github.io/anycam">AnyCam</a> was accepted at <b>CVPR 2025</b>.
@@ -172,6 +175,97 @@ Through this, I hope to enable more wide-spread applications of such methods, an
                     </table>
                     <!-- Publications Section: Refactored to use divs instead of table -->
                     <div class="pub-list">
+                        <div class="pub-row">
+                            <div class="pub-img-col">
+                                <div class="one">
+                                    <img src='static/images/wulff2025dreamtorecon.png' width=100%>
+                                </div>
+                            </div>
+                            <div class="pub-info-col">
+                                <a href="https://philippwulff.github.io/dream-to-recon/">
+                                    <span class="papertitle">Dream-to-Recon: Monocular 3D Reconstruction with Diffusion-Depth Distillation from Single Images</span>
+                                </a>
+                                <span class="authors">
+                                <a href="https://philippwulff.github.io/dream-to-recon/" target="_blank">Philipp Wulff</a>,
+                                <strong>Felix Wimbauer</strong>,
+                                <a href="https://dominikmuhle.github.io/" target="_blank">Dominik Muhle</a>,
+                                <a href="https://cvg.cit.tum.de/members/cremers" target="_blank">Daniel Cremers</a>
+                                </span>
+                                <span class="pub-venue"><b>ICCV</b>, 2025</span>
+                                <span class="pub-links">
+                                    <a href="https://philippwulff.github.io/dream-to-recon/" target="_blank">project page</a>
+                                    /
+                                    <a href="https://arxiv.org/abs/2508.02323" target="_blank">arXiv</a>    
+                                </span>
+                                <p>
+                                    We leverage a diffusion model and a depth predictor to generate high-quality scene geometry from a single image. Then, we distill a feed-forward scene reconstruction model, which performs on par with reconstruction methods trained with multi-view supervision.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="pub-row">
+                            <div class="pub-img-col">
+                                <div class="one">
+                                    <img src='static/images/chen2025backontrack.png' width=100%>
+                                </div>
+                            </div>
+                            <div class="pub-info-col">
+                                <a href="https://wrchen530.github.io/projects/batrack/">
+                                    <span class="papertitle">Back on Track: Bundle Adjustment for Dynamic Scene Reconstruction</span>
+                                </a>
+                                <span class="authors">
+                                <a href="https://wrchen530.github.io">Weirong Chen</a>,
+                                <a href="https://ganlinzhang.xyz/">Ganlin Zhang</a>,
+                                <strong>Felix Wimbauer</strong>,
+                                <a href="https://rui2016.github.io/">Rui Wang</a>,
+                                <a href="https://arnike.github.io/">Nikita Araslanov</a>,
+                                <a href="https://www.robots.ox.ac.uk/~vedaldi//">Andrea Vedaldi</a>,
+                                <a href="https://cvg.cit.tum.de/members/cremers">Daniel Cremers</a>
+                                </span>
+                                <span class="pub-venue"><b>ICCV</b>, 2025 <b><font color="#FF0000">(Oral)</font></b></span>
+                                <span class="pub-links">
+                                    <a href="https://wrchen530.github.io/projects/batrack/" target="_blank">project page</a>
+                                    /
+                                    <a href="https://arxiv.org/abs/2504.14516" target="_blank">arXiv</a>    
+                                </span>
+                                <p>
+                                    A method for consistent dynamic scene reconstruction via motion decoupling, bundle adjustment, and global refinement.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="pub-row">
+                            <div class="pub-img-col">
+                                <div class="one">
+                                    <img src='static/images/reich2025scenedino.gif' width=100%>
+                                </div>
+                            </div>
+                            <div class="pub-info-col">
+                                <a href="https://visinf.github.io/scenedino/">
+                                    <span class="papertitle">Feed-Forward SceneDINO for Unsupervised Semantic Scene Completion</span>
+                                </a>
+                                <span class="authors">
+                                <a href="https://jev-aleks.github.io/">Aleksandar Jevtić*</a>,
+                                <a href="https://christophreich1996.github.io/"> Christoph Reich*</a>,
+                                <strong>Felix Wimbauer</strong>,
+                                <a href="https://olvrhhn.github.io/">Oliver Hahn</a>,
+                                <a href="https://chrirupp.github.io/">Christian Rupprecht</a>,
+                                <a href="https://www.visinf.tu-darmstadt.de/visual_inference/people_vi/stefan_roth.en.jsp">Stefan Roth</a>,
+                                <a href="https://cvg.cit.tum.de/members/cremers">Daniel Cremers</a>
+                                </span>
+                                <span class="pub-venue"><b>ICCV</b>, 2025</span>
+                                <span class="pub-links">
+                                    <a href="https://visinf.github.io/scenedino/" target="_blank">project page</a>
+                                    /
+                                    <a href="https://arxiv.org/abs/2507.06230" target="_blank">arXiv</a>
+                                    /
+                                    <a href="https://github.com/tum-vision/scenedino" target="_blank">code</a>   
+                                    /
+                                    <a href="https://huggingface.co/spaces/jev-aleks/SceneDINO" target="_blank">demo</a>   
+                                </span>
+                                <p>
+                                    SceneDINO is unsupervised and infers 3D geometry and features from a single image in a feed-forward manner. Distilling and clustering SceneDINO's 3D feature field results in unsupervised semantic scene completion predictions. SceneDINO is trained using multi-view self-supervision.
+                                </p>
+                            </div>
+                        </div>
                         <div class="pub-row">
                             <div class="pub-img-col">
                                 <div class="one">
