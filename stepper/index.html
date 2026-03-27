@@ -139,10 +139,9 @@
         <h2 class="title is-3">Key Contributions</h2>
         <div class="content has-text-justified">
           <ul style="text-align: left; max-width: 800px; margin: 0 auto;">
-            <li><strong>Stepwise Generation Framework:</strong> First method for continuous panoramic view synthesis with controlled ~25cm stepping distance</li>
-            <li><strong>Cubemap Diffusion Pipeline:</strong> Novel approach to leverage pretrained image diffusion models for panoramic generation using 6-face cubemap representation</li>
-            <li><strong>Large-Scale Dataset:</strong> 230,000 panorama pairs at 4K resolution from 5,000 Infinigen scenes for training and evaluation</li>
-            <li><strong>Real-time Exploration:</strong> Combined MapAnything and 3D Gaussian Splatting enables interactive scene navigation</li>
+            <li><strong>Multi-view Panorama Diffusion Model:</strong> Novel diffusion model that enables iterative scene expansion by "stepping" into generated scenes using full panoramic contexts, minimizing context drift while maintaining high resolution</li>
+            <li><strong>Robust Reconstruction Framework:</strong> Pipeline that converts multi-view panoramas to perspective views, processes them with feed-forward SfM (MapAnything) for dense point cloud recovery, and optimizes 3D Gaussian Splatting for real-time exploration</li>
+            <li><strong>Large-Scale Multi-view Panorama Dataset:</strong> 230,000 samples at 4096×2048 resolution across 5,000 procedurally generated scenes from Infinigen, addressing the scarcity of multi-view panoramic data for training and evaluation</li>
           </ul>
         </div>
       </div>
