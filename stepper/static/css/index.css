@@ -530,11 +530,11 @@ body {
 
 .quantitative-tabs li {
   margin: 0;
+  padding-bottom: 8px;
 }
 
 .quantitative-tabs li a {
   border-bottom: none;
-  padding: 0.45rem 1rem;
 }
 
 .quantitative-tabs li.is-active a {
@@ -556,8 +556,48 @@ body {
 }
 
 @media (max-width: 768px) {
+  .quantitative-results-grid {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .quantitative-results-grid .column {
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+  }
+
+  .quantitative-panel {
+    padding: 12px;
+  }
+
   .quantitative-panel-header {
     min-height: auto;
     margin-bottom: 12px;
+  }
+
+  .quantitative-tabs {
+    margin-bottom: 0;
+  }
+
+  .quantitative-table {
+    table-layout: fixed;
+  }
+
+  .quantitative-table th,
+  .quantitative-table td {
+    font-size: clamp(0.68rem, 2.75vw, 0.78rem);
+    padding: 8px 6px;
+    line-height: 1.2;
+  }
+
+  .quantitative-table th:first-child,
+  .quantitative-table td:first-child {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  .quantitative-panel-caption {
+    font-size: 0.78rem;
+    padding: 0.4rem 0.7rem;
   }
 }
