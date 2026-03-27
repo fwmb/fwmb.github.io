@@ -22,6 +22,9 @@ $(document).ready(function() {
     
     // Lock video aspect ratio to prevent layout jumps
     lockVideoAspectRatio();
+    
+    // Initialize quantitative results tabs
+    setupQuantitativeTabs();
 })
 
 function setupVideoNavigation() {
@@ -103,5 +106,28 @@ function lockVideoAspectRatio() {
         
         video.addEventListener('loadedmetadata', updateHeight);
         window.addEventListener('resize', updateHeight);
+    });
+}
+
+function setupQuantitativeTabs() {
+    var tabButtons = document.querySelectorAll('.tabs li[data-dataset]');
+    var tableContainers = document.querySelectorAll('.quantitative-table-container');
+    
+    tabButtons.forEach(function(button) {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            var targetDataset = this.getAttribute('data-dataset');
+            
+            tabButtons.forEach(function(btn) {
+                btn.classList.remove('is-active');
+            });
+            
+            tableContainers.forEach(function(container) {
+                container.style.display = 'none';
+            });
+            
+            this.classList.add('is-active');
+            document.getElementById('table-' + targetDataset).style.display = 'block';
+        });
     });
 }

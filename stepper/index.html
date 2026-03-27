@@ -56,7 +56,7 @@
             </span>
           </div>
 
-          <div class="is-size-5 publication-affiliations" style="margin-bottom: 20px;">
+          <div class="is-size-5 publication-affiliations">
             <span class="author-block"><sup>1</sup>Google, <sup>2</sup>University of Oxford, <sup>3</sup>MCML, <sup>4</sup>Technical University of Munich</span>
           </div>
 
@@ -71,7 +71,7 @@
                 </a>
               </span>
               <span class="link-block">
-                <a href="#" class="button is-rounded is-dark" style="opacity: 0.5; cursor: not-allowed;">
+                <a href="#" class="button is-rounded is-dark is-disabled-link" aria-disabled="true" tabindex="-1">
                   <span class="icon">
                     <i class="fas fa-video"></i>
                   </span>
@@ -79,7 +79,7 @@
                 </a>
               </span>
               <span class="link-block">
-                <a href="#" class="button is-rounded is-dark" style="opacity: 0.5; cursor: not-allowed;">
+                <a href="#" class="button is-rounded is-dark is-disabled-link" aria-disabled="true" tabindex="-1">
                   <span class="icon">
                     <i class="fas fa-database"></i>
                   </span>
@@ -94,9 +94,8 @@
                   <span>Supplementary</span>
                 </a>
               </span>
-            </div>
-          </div>
         </div>
+        
       </div>
     </div>
   </div>
@@ -138,7 +137,7 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Key Contributions</h2>
         <div class="content has-text-justified">
-          <ul style="text-align: left; max-width: 800px; margin: 0 auto;">
+          <ul class="content-list">
             <li><strong>Multi-view Panorama Diffusion Model:</strong> Novel diffusion model that enables iterative scene expansion by "stepping" into generated scenes using full panoramic contexts, minimizing context drift while maintaining high resolution</li>
             <li><strong>Robust Reconstruction Framework:</strong> Pipeline that converts multi-view panoramas to perspective views, processes them with feed-forward SfM (MapAnything) for dense point cloud recovery, and optimizes 3D Gaussian Splatting for real-time exploration</li>
             <li><strong>Large-Scale Multi-view Panorama Dataset:</strong> 230,000 samples at 4096×2048 resolution across 5,000 procedurally generated scenes from Infinigen, addressing the scarcity of multi-view panoramic data for training and evaluation</li>
@@ -155,7 +154,7 @@
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Qualitative Results</h2>
-        <p class="is-size-5 has-text-centered" style="margin-bottom: 30px;">
+        <p class="is-size-5 has-text-centered section-subtitle">
           Baseline comparisons showing Stepper vs. existing methods
         </p>
       </div>
@@ -189,7 +188,7 @@
       </div>
     </div>
 
-    <p class="is-size-5 has-text-centered" style="margin-top: 50px; margin-bottom: 30px;">
+    <p class="is-size-5 has-text-centered section-subtitle section-subtitle-spaced">
       Qualitative examples: Stepper flythroughs
     </p>
     
@@ -221,15 +220,15 @@
           <p>
             Stepper follows a four-stage pipeline for immersive scene generation:
           </p>
-          <ol style="text-align: left; max-width: 800px; margin: 0 auto;">
+          <ol class="content-list">
             <li><strong>Multi-view Panorama Generation:</strong> Synthesizes novel panoramic views by moving ~25cm forward from input panorama using cubemap representation (6 faces × 2 viewpoints = 12 total views)</li>
             <li><strong>Perspective View Extraction:</strong> Converts cubemap faces to perspective views suitable for 3D reconstruction</li>
             <li><strong>Feed-forward 3D Reconstruction:</strong> Uses MapAnything model for initial 3D scene estimation</li>
             <li><strong>3D Gaussian Splatting Optimization:</strong> Refines reconstruction for real-time exploration and rendering</li>
           </ol>
           <br>
-          <img src="./static/images/pipeline_overview-1.jpg" alt="Stepper method pipeline overview" style="max-width: 100%; height: auto;">
-          <p class="is-size-6 has-text-centered" style="margin-top: 10px;">
+          <img src="./static/images/pipeline_overview-1.jpg" alt="Stepper method pipeline overview" class="responsive-media">
+          <p class="is-size-6 has-text-centered media-caption">
             Method pipeline: From input panorama to stepwise 3D scene generation
           </p>
         </div>
@@ -248,7 +247,7 @@
           <p>
             We introduce a large-scale synthetic dataset for training panorama-based scene generation:
           </p>
-          <ul style="text-align: left; max-width: 800px; margin: 0 auto;">
+          <ul class="content-list">
             <li><strong>Scale:</strong> 230,000 panorama pairs at 4096×2048 resolution</li>
             <li><strong>Generation:</strong> 5,000 unique scenes created with Infinigen procedural generator</li>
             <li><strong>Test Set:</strong> 6 photorealistic Blender scenes + 10 Infinigen scenes for evaluation</li>
@@ -257,8 +256,8 @@
         </div>
       </div>
       <div class="column is-half has-text-centered">
-        <img src="./static/images/infinigen_data-1.jpg" alt="Infinigen dataset visualization" class="dataset-image" style="max-width: 100%; height: auto; border-radius: 8px;">
-        <p class="is-size-6 has-text-centered" style="margin-top: 10px;">
+        <img src="./static/images/infinigen_data-1.jpg" alt="Infinigen dataset visualization" class="dataset-image responsive-media">
+        <p class="is-size-6 has-text-centered media-caption">
           Dataset visualization showing Infinigen-generated scenes with panoramic views
         </p>
       </div>
@@ -271,19 +270,197 @@
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Quantitative Results</h2>
-        <div class="content has-text-justified">
-          <p>
-            Stepper consistently outperforms baseline methods across all evaluation metrics:
-          </p>
-          <ul style="text-align: left; max-width: 800px; margin: 0 auto;">
-            <li><strong>PSNR:</strong> +3.3 dB improvement over baselines on average</li>
-            <li><strong>SSIM:</strong> Higher structural similarity scores indicating better perceptual quality</li>
-            <li><strong>LPIPS:</strong> Lower learned perceptual image patch similarity scores</li>
-            <li><strong>FID:</strong> Improved Fréchet Inception Distance for distribution matching</li>
-          </ul>
-          <p style="margin-top: 20px;">
-            Detailed quantitative comparisons are provided in the paper.
-          </p>
+        <p class="section-description">
+          Stepper consistently outperforms baseline methods across all evaluation metrics:
+        </p>
+      </div>
+    </div>
+    
+    <div class="columns is-centered">
+      <div class="column is-half">
+        <div class="quantitative-panel">
+          <div class="quantitative-panel-header">
+            <div class="tabs is-centered is-medium quantitative-tabs">
+              <ul>
+                <li class="is-active" data-dataset="indoors">
+                  <a class="quantitative-panel-caption">
+                    <span>Infinigen Indoors</span>
+                  </a>
+                </li>
+                <li data-dataset="outdoors">
+                  <a class="quantitative-panel-caption">
+                    <span>Infinigen Outdoors</span>
+                  </a>
+                </li>
+                <li data-dataset="blender">
+                  <a class="quantitative-panel-caption">
+                    <span>Blender Scenes</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div id="table-indoors" class="quantitative-table-container" style="display: block;">
+            <table class="quantitative-table">
+              <thead>
+                <tr>
+                  <th>Method</th>
+                  <th>PSNR ↑</th>
+                  <th>SSIM ↑</th>
+                  <th>LPIPS ↓</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>WorldExplorer</td>
+                  <td>11.864</td>
+                  <td>0.674</td>
+                  <td>0.739</td>
+                </tr>
+                <tr>
+                  <td>LayerPano3D</td>
+                  <td>18.305</td>
+                  <td>0.783</td>
+                  <td>0.509</td>
+                </tr>
+                <tr>
+                  <td>Matrix-3D</td>
+                  <td>18.532</td>
+                  <td>0.753</td>
+                  <td>0.502</td>
+                </tr>
+                <tr class="best-row">
+                  <td><strong>Stepper (Ours)</strong></td>
+                  <td><strong>21.775</strong></td>
+                  <td><strong>0.797</strong></td>
+                  <td><strong>0.430</strong></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div id="table-outdoors" class="quantitative-table-container" style="display: none;">
+            <table class="quantitative-table">
+              <thead>
+                <tr>
+                  <th>Method</th>
+                  <th>PSNR ↑</th>
+                  <th>SSIM ↑</th>
+                  <th>LPIPS ↓</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>WorldExplorer</td>
+                  <td>13.912</td>
+                  <td>0.561</td>
+                  <td>0.594</td>
+                </tr>
+                <tr>
+                  <td>LayerPano3D</td>
+                  <td>17.364</td>
+                  <td>0.590</td>
+                  <td>0.537</td>
+                </tr>
+                <tr>
+                  <td>Matrix-3D</td>
+                  <td>17.970</td>
+                  <td>0.581</td>
+                  <td>0.529</td>
+                </tr>
+                <tr class="best-row">
+                  <td><strong>Stepper (Ours)</strong></td>
+                  <td><strong>20.507</strong></td>
+                  <td><strong>0.646</strong></td>
+                  <td><strong>0.384</strong></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div id="table-blender" class="quantitative-table-container" style="display: none;">
+            <table class="quantitative-table">
+              <thead>
+                <tr>
+                  <th>Method</th>
+                  <th>PSNR ↑</th>
+                  <th>SSIM ↑</th>
+                  <th>LPIPS ↓</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>WorldExplorer</td>
+                  <td>13.659</td>
+                  <td>0.637</td>
+                  <td>0.611</td>
+                </tr>
+                <tr>
+                  <td>LayerPano3D</td>
+                  <td>18.124</td>
+                  <td>0.692</td>
+                  <td>0.463</td>
+                </tr>
+                <tr>
+                  <td>Matrix-3D</td>
+                  <td>17.898</td>
+                  <td>0.660</td>
+                  <td>0.515</td>
+                </tr>
+                <tr class="best-row">
+                  <td><strong>Stepper (Ours)</strong></td>
+                  <td><strong>21.995</strong></td>
+                  <td><strong>0.762</strong></td>
+                  <td><strong>0.342</strong></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      
+      <div class="column is-half">
+        <div class="quantitative-panel">
+          <div class="quantitative-panel-header">
+            <div class="quantitative-panel-caption average-results-caption">Average Results</div>
+          </div>
+          <table class="quantitative-table average-table">
+            <thead>
+              <tr>
+                <th>Method</th>
+                <th>PSNR ↑</th>
+                <th>SSIM ↑</th>
+                <th>LPIPS ↓</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>WorldExplorer</td>
+                <td>13.145</td>
+                <td>0.624</td>
+                <td>0.648</td>
+              </tr>
+              <tr>
+                <td>LayerPano3D</td>
+                <td>17.931</td>
+                <td>0.688</td>
+                <td>0.503</td>
+              </tr>
+              <tr>
+                <td>Matrix-3D</td>
+                <td>18.133</td>
+                <td>0.665</td>
+                <td>0.515</td>
+              </tr>
+              <tr class="best-row">
+                <td><strong>Stepper (Ours)</strong></td>
+                <td><strong>21.426</strong></td>
+                <td><strong>0.735</strong></td>
+                <td><strong>0.385</strong></td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
