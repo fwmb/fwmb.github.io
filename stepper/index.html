@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Stepper: Stepwise Immersive Scene Generation with Multiview Panoramas">
+  <meta name="keywords" content="Stepper, 3D Generation, Gaussian Splatting, Panoramas">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stepper: Stepwise Immersive Scene Generation with Multiview Panoramas</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="./static/css/slider-component.css">
+
+  <link rel="icon" href="./static/images/favicon.ico">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <script src="./static/js/slider-component.js"></script>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Stepper: Stepwise Immersive Scene Generation with Multiview Panoramas</h1>
+          <div class="is-size-4 publication-authors">
+            <span class="author-block">CVPR 2026 Findings</span>
+          </div>
+          <br>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://fwmb.github.io">Felix Wimbauer</a><sup>1,3,4</sup>,</span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=bERItx8AAAAJ">Fabian Manhardt</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://moechsle.github.io">Michael Oechsle</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=XwzlnZoAAAAJ">Nikolai Kalischek</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://chrirupp.github.io/">Christian Rupprecht</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="https://cvg.cit.tum.de/members/cremers">Daniel Cremers</a><sup>3,4</sup>,</span>
+            <span class="author-block">
+              <a href="https://federicotombari.github.io/">Federico Tombari</a><sup>1,4</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-affiliations" style="margin-bottom: 20px;">
+            <span class="author-block"><sup>1</sup>Google, <sup>2</sup>University of Oxford, <sup>3</sup>MCML, <sup>4</sup>Technical University of Munich</span>
+          </div>
+
+          <div class="is-size-5 publication-links has-text-centered">
+            <div class="buttons is-centered">
+              <span class="link-block">
+                <a href="#" class="button is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="#" class="button is-rounded is-dark" style="opacity: 0.5; cursor: not-allowed;">
+                  <span class="icon">
+                    <i class="fas fa-database"></i>
+                  </span>
+                  <span>Dataset (coming soon)</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="./static/pdfs/stepper_suppmat.pdf" class="button is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Supplementary</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full">
+          <div class="teaser-container">
+            <img src="./static/images/banner.jpg" alt="Stepper teaser image showing panoramic scene generation">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section has-background-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            The synthesis of immersive 3D scenes from text is rapidly maturing, driven by novel video generative models and feed-forward 3D reconstruction, with vast potential in AR/VR and world modeling. While panoramic images have proven effective for scene initialization, existing approaches suffer from a trade-off between visual fidelity and explorability: autoregressive expansion suffers from context drift, while panoramic video generation is limited to low resolution. 
+            We present <em>Stepper</em>, a unified framework for text-driven immersive 3D scene synthesis that circumvents these limitations via stepwise panoramic scene expansion. Stepper leverages a novel multi-view 360° diffusion model that enables consistent, high-resolution exploration, coupled with a geometry reconstruction pipeline that enforces geometric coherence. Trained on a new large-scale, multi-view panorama dataset, Stepper achieves state-of-the-art fidelity and structural consistency, outperforming prior approaches, thereby setting a new standard for immersive scene generation.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Key Contributions</h2>
+        <div class="content has-text-justified">
+          <ul style="text-align: left; max-width: 800px; margin: 0 auto;">
+            <li><strong>Stepwise Generation Framework:</strong> First method for continuous panoramic view synthesis with controlled ~25cm stepping distance</li>
+            <li><strong>Cubemap Diffusion Pipeline:</strong> Novel approach to leverage pretrained image diffusion models for panoramic generation using 6-face cubemap representation</li>
+            <li><strong>Large-Scale Dataset:</strong> 230,000 panorama pairs at 4K resolution from 5,000 Infinigen scenes for training and evaluation</li>
+            <li><strong>Real-time Exploration:</strong> Combined MapAnything and 3D Gaussian Splatting enables interactive scene navigation</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Qualitative Results</h2>
+        <p class="is-size-5 has-text-centered" style="margin-bottom: 30px;">
+          Baseline comparisons showing Stepper vs. existing methods
+        </p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="container is-max-desktop">
+    <div class="video-player-section" id="baseline-section">
+      <div class="main-video-container">
+        <video id="main-video" controls muted>
+          <source src="./static/video/barbershop.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <div class="thumbnail-strip" data-section="baseline">
+        <div class="thumbnail-wrapper" data-video="./static/video/barbershop.mp4" data-thumb="./static/video/thumbnails/barbershop_thumb.jpg">
+          <img src="./static/video/thumbnails/barbershop_thumb.jpg" alt="Barbershop">
+        </div>
+        <div class="thumbnail-wrapper" data-video="./static/video/blue_room.mp4" data-thumb="./static/video/thumbnails/blue_room_thumb.jpg">
+          <img src="./static/video/thumbnails/blue_room_thumb.jpg" alt="Blue Room">
+        </div>
+        <div class="thumbnail-wrapper" data-video="./static/video/classroom.mp4" data-thumb="./static/video/thumbnails/classroom_thumb.jpg">
+          <img src="./static/video/thumbnails/classroom_thumb.jpg" alt="Classroom">
+        </div>
+        <div class="thumbnail-wrapper" data-video="./static/video/mountaincabin.mp4" data-thumb="./static/video/thumbnails/mountaincabin_thumb.jpg">
+          <img src="./static/video/thumbnails/mountaincabin_thumb.jpg" alt="Mountain Cabin">
+        </div>
+        <div class="thumbnail-wrapper" data-video="./static/video/valley.mp4" data-thumb="./static/video/thumbnails/valley_thumb.jpg">
+          <img src="./static/video/thumbnails/valley_thumb.jpg" alt="Valley">
+        </div>
+      </div>
+    </div>
+
+    <p class="is-size-5 has-text-centered" style="margin-top: 50px; margin-bottom: 30px;">
+      Qualitative examples: Stepper flythroughs
+    </p>
+    
+    <div class="video-player-section" id="flythrough-section">
+      <div class="main-video-container">
+        <video id="main-video-flythrough" controls muted>
+          <source src="./static/video/flythrough_castle.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <div class="thumbnail-strip" data-section="flythrough">
+        <div class="thumbnail-wrapper" data-video="./static/video/flythrough_castle.mp4" data-thumb="./static/video/thumbnails/flythrough_castle_thumb.jpg">
+          <img src="./static/video/thumbnails/flythrough_castle_thumb.jpg" alt="Castle">
+        </div>
+        <div class="thumbnail-wrapper" data-video="./static/video/flythrough_rosetrees.mp4" data-thumb="./static/video/thumbnails/flythrough_rosetrees_thumb.jpg">
+          <img src="./static/video/thumbnails/flythrough_rosetrees_thumb.jpg" alt="Rosetrees">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Method Overview</h2>
+        <div class="content has-text-justified">
+          <p>
+            Stepper follows a four-stage pipeline for immersive scene generation:
+          </p>
+          <ol style="text-align: left; max-width: 800px; margin: 0 auto;">
+            <li><strong>Multi-view Panorama Generation:</strong> Synthesizes novel panoramic views by moving ~25cm forward from input panorama using cubemap representation (6 faces × 2 viewpoints = 12 total views)</li>
+            <li><strong>Perspective View Extraction:</strong> Converts cubemap faces to perspective views suitable for 3D reconstruction</li>
+            <li><strong>Feed-forward 3D Reconstruction:</strong> Uses MapAnything model for initial 3D scene estimation</li>
+            <li><strong>3D Gaussian Splatting Optimization:</strong> Refines reconstruction for real-time exploration and rendering</li>
+          </ol>
+          <br>
+          <img src="./static/images/pipeline_overview-1.jpg" alt="Stepper method pipeline overview" style="max-width: 100%; height: auto;">
+          <p class="is-size-6 has-text-centered" style="margin-top: 10px;">
+            Method pipeline: From input panorama to stepwise 3D scene generation
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-half">
+        <h2 class="title is-3">Dataset</h2>
+        <div class="content has-text-justified">
+          <p>
+            We introduce a large-scale synthetic dataset for training panorama-based scene generation:
+          </p>
+          <ul style="text-align: left; max-width: 800px; margin: 0 auto;">
+            <li><strong>Scale:</strong> 230,000 panorama pairs at 4096×2048 resolution</li>
+            <li><strong>Generation:</strong> 5,000 unique scenes created with Infinigen procedural generator</li>
+            <li><strong>Test Set:</strong> 6 photorealistic Blender scenes + 10 Infinigen scenes for evaluation</li>
+            <li><strong>Stepping Distance:</strong> ~25cm forward movement between consecutive panoramas</li>
+          </ul>
+        </div>
+      </div>
+      <div class="column is-half has-text-centered">
+        <img src="./static/images/infinigen_data-1.jpg" alt="Infinigen dataset visualization" class="dataset-image" style="max-width: 100%; height: auto; border-radius: 8px;">
+        <p class="is-size-6 has-text-centered" style="margin-top: 10px;">
+          Dataset visualization showing Infinigen-generated scenes with panoramic views
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section has-background-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Quantitative Results</h2>
+        <div class="content has-text-justified">
+          <p>
+            Stepper consistently outperforms baseline methods across all evaluation metrics:
+          </p>
+          <ul style="text-align: left; max-width: 800px; margin: 0 auto;">
+            <li><strong>PSNR:</strong> +3.3 dB improvement over baselines on average</li>
+            <li><strong>SSIM:</strong> Higher structural similarity scores indicating better perceptual quality</li>
+            <li><strong>LPIPS:</strong> Lower learned perceptual image patch similarity scores</li>
+            <li><strong>FID:</strong> Improved Fréchet Inception Distance for distribution matching</li>
+          </ul>
+          <p style="margin-top: 20px;">
+            Detailed quantitative comparisons are provided in the paper.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre>@misc{wimbauer2026stepper,
+  title={Stepper: Stepwise Immersive Scene Generation with Multiview Panoramas},
+  author={Wimbauer, Felix and Manhardt, Fabian and Oechsle, Michael and Kalischek, Nikolai and Rupprecht, Christian and Cremers, Daniel and Tombari, Federico},
+  year={2026},
+  eprint={2603.xxxxx},
+  archivePrefix={arXiv},
+  primaryClass={cs.CV}
+}</pre>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Acknowledgments</h2>
+        <div class="content has-text-justified">
+          <p>
+            We thank the open-source community for providing the Infinigen, MapAnything, and 3D Gaussian Splatting frameworks that made this work possible.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
